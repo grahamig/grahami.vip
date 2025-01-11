@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONLY ☆ VIPS</title>
+    <title>ONLY☆VIPS</title>
 
     <!--google fonts-->
     <style>
@@ -62,6 +62,7 @@
 
         .star {
             font-size: 32px;
+            cursor: pointer; /* Add cursor pointer to indicate it's clickable */
         }
 
         @keyframes gradient {
@@ -133,9 +134,9 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠀⠀⣰⣿⣿⣾⣿⠿⢿⣷⣀⢀⣿⡇⠁⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠉⠁⠀⠀⠀⠀⠙⢿⣿⣿⠇⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀
         </pre>
-        <footer>you're a <span class="star">☆</span></footer>
+        <footer>you're a <a href="https://www.instagram.com/grahamiiig" target="_blank" class="star">☆</a>!</footer>
     </div>
 
     <script>
@@ -211,10 +212,10 @@
         function fadeInOut() {
             setInterval(() => {
                 asciiArt.style.opacity = asciiArt.style.opacity == 0 ? 1 : 0;
-            }, 8000); // Change opacity every 5 seconds
+            }, 8000); // Change opacity every 8 seconds
             setInterval(() => {
                 starArt.style.opacity = starArt.style.opacity == 0 ? 1 : 0;
-            }, 10000); // Change opacity every 7 seconds
+            }, 10000); // Change opacity every 10 seconds
         }
 
         // Start the movement and fading
