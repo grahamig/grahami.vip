@@ -4,5 +4,5 @@ dev notes
 cd /d E:\grahami.vip
 git status
 git add .
-git commit -m "fuck the sunset shit, new colors"
+git commit -m "new colors neon"
 git push origin main
