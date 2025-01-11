@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONLY ☆ VIPS</title>
+    <title>ONLY☆VIPS</title>
     <!--favicon-->
     <link rel="icon" href="vipgrahami.ico" type="image/x-icon">
 
@@ -141,6 +141,36 @@
                 background-position: 100% 50%;
             }
         }
+
+        <style >
+        /* Existing CSS styles for the body, h1, etc. */
+        .star-art {
+            font-size: 19px;
+            white-space: pre;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 3s ease-in-out;
+            top: 10%; /* Added to keep it within the screen bounds */
+            left: 10%; /* Added to keep it within the screen bounds */
+            right: 10%; /* Ensure the right side is within the screen */
+            bottom: 10%; /* Ensure the bottom side is within the screen */
+        }
+
+        /* Media Query for smaller screens (mobile, tablet) */
+        @media (max-width: 768px) {
+            .star-art {
+                font-size: 16px; /* Adjust size for smaller screens */
+                top: 5%; /* Adjust top position for better placement */
+                left: 5%; /* Adjust left position for better placement */
+                right: 5%; /* Keep it within the screen */
+                bottom: 5%; /* Keep it within the screen */
+            }
+        }
+
+        /* Existing keyframes and other styles */
+    </style>
+
+
     </style>
 </head>
 <body>
