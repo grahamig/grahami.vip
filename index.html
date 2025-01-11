@@ -39,15 +39,15 @@
             white-space: pre;
             position: absolute;
             opacity: 0;
-            transition: opacity 3s ease-in-out;
+            transition: opacity 4s ease-in-out;
         }
 
         .star-art {
-            font-size: 9px;
+            font-size: 19px;
             white-space: pre;
             position: absolute;
             opacity: 0;
-            transition: opacity 3s ease-in-out;
+            transition: opacity 5s ease-in-out;
         }
 
         footer {
@@ -211,10 +211,10 @@
         function fadeInOut() {
             setInterval(() => {
                 asciiArt.style.opacity = asciiArt.style.opacity == 0 ? 1 : 0;
-            }, 5000); // Change opacity every 5 seconds
+            }, 8000); // Change opacity every 5 seconds
             setInterval(() => {
                 starArt.style.opacity = starArt.style.opacity == 0 ? 1 : 0;
-            }, 7000); // Change opacity every 7 seconds
+            }, 10000); // Change opacity every 7 seconds
         }
 
         // Start the movement and fading
