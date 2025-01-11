@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONLY ☆ VIPS</title>
+    <title>ONLY☆VIPS</title>
     <!--favicon-->
     <link rel="icon" href="vipgrahami.ico" type="image/x-icon">
 
@@ -271,7 +271,7 @@
             asciiArt.style.left = `${asciiArtPosition.x}px`;
             asciiArt.style.top = `${asciiArtPosition.y}px`;
 
-            // Move star art
+            // Move star art and bounce correctly within screen bounds
             starArtPosition.x += starArtSpeed * starArtDirection.x;
             starArtPosition.y += starArtSpeed * starArtDirection.y;
 
@@ -288,8 +288,9 @@
                 starArtDirection.y *= -1;
             }
 
-            starArt.style.left = `${starArtPosition.x}px`;
-            starArt.style.top = `${starArtPosition.y}px`;
+            // Set the position of the star art, clamping it properly within the screen bounds
+            starArt.style.left = `${Math.min(Math.max(starArtPosition.x, 0), viewportWidth - starArtWidth)}px`;
+            starArt.style.top = `${Math.min(Math.max(starArtPosition.y, 0), viewportHeight - starArtHeight)}px`;
 
             requestAnimationFrame(moveElements);
         }
@@ -323,5 +324,6 @@
         // Start the DVD screensaver animation
         moveElements();
     </script>
+
 </body>
 </html>
