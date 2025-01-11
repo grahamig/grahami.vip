@@ -7,7 +7,6 @@
     <!--favicon-->
     <link rel="icon" href="vipgrahami32.ico" type="image/x-icon">
 
-
     <!--google fonts-->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
@@ -57,20 +56,46 @@
             font-size: 22px;
             text-shadow: 3px 3px 3px #000000, 3px 3px 0px #000000;
             position: absolute;
-            cursor: pointer; /* Add cursor to indicate it's clickable */
-            color: white; /* Make the link white */
-            text-decoration: none; /* Remove underline */
+            cursor: pointer;
+            color: white;
+            text-decoration: none;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            z-index: 1000; /* Increase z-index to ensure it's on top */
+            z-index: 1000;
         }
 
         .star {
             font-size: 32px;
-            cursor: pointer; /* Add cursor to indicate it's clickable */
-            color: white; /* Make the link white */
-            text-decoration: none; /* Remove underline */
+            cursor: pointer;
+            color: white;
+            text-decoration: none;
+        }
+
+        #login-container {
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #fade-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 8px;
+            color: white;
+            font-family: 'Slackey', cursive;
+        }
+
+        #fade-time {
+            margin-left: 10px;
+            width: 80px;
+            padding: 5px;
+            border-radius: 4px;
+            border: none;
         }
 
         @keyframes gradient {
@@ -142,27 +167,32 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠀⠀⣰⣿⣿⣾⣿⠿⢿⣷⣀⢀⣿⡇⠁⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠉⠁⠀⠀⠀⠀⠙⢿⣿⣿⠇⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀
         </pre>
         <footer>you're a <a href="https://www.instagram.com/grahamiiig" target="_blank" class="star">☆</a>!</footer>
 
-        <!--Login-->
-        <div id="login-container" style="position: absolute; bottom: 10%; text-align: center; width: 100%;">
+        <!-- Login -->
+        <div id="login-container">
             <button id="login-button" style="
-        font-size: 18px;
-        padding: 10px 20px;
-        background-color: #ff00b3;
-        border: none;
-        border-radius: 8px;
-        color: white;
-        cursor: pointer;
-        box-shadow: 2px 2px 10px #000000;
-        font-family: 'Slackey', cursive;
-    ">
+                font-size: 18px;
+                padding: 10px 20px;
+                background-color: #ff00b3;
+                border: none;
+                border-radius: 8px;
+                color: white;
+                cursor: pointer;
+                box-shadow: 2px 2px 10px #000000;
+                font-family: 'Slackey', cursive;
+            ">
                 Login
             </button>
         </div>
 
+        <!-- Fade Control -->
+        <div id="fade-control">
+            <label for="fade-time" style="font-size: 14px;">Set Fade Time (ms):</label>
+            <input type="number" id="fade-time" value="30000" min="1000" step="1000">
+        </div>
     </div>
 
     <script>
@@ -170,23 +200,21 @@
         let h1 = document.querySelector('h1');
         let asciiArt = document.querySelector('.ascii-art');
         let starArt = document.querySelector('.star-art');
-        let h1Speed = 0.5; // Constant speed for movement
-        let asciiArtSpeed = 0.5; // Speed for ASCII art movement
-        let starArtSpeed = 0.5; // Speed for star ASCII art movement
-        let h1Direction = { x: 1, y: 1 }; // Directions of movement for h1
-        let asciiArtDirection = { x: -1, y: 1 }; // Directions of movement for ASCII art
-        let starArtDirection = { x: 1, y: -1 }; // Directions of movement for star ASCII art
+        let h1Speed = 0.5;
+        let asciiArtSpeed = 0.5;
+        let starArtSpeed = 0.5;
+        let h1Direction = { x: 1, y: 1 };
+        let asciiArtDirection = { x: -1, y: 1 };
+        let starArtDirection = { x: 1, y: -1 };
         let h1Position = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
         let asciiArtPosition = { x: window.innerWidth / 3, y: window.innerHeight / 3 };
         let starArtPosition = { x: window.innerWidth / 4, y: window.innerHeight / 4 };
-        let safeZone = 18; // Safe zone to prevent the text from going off-screen
+        let safeZone = 18;
 
         function moveElements() {
-            // Update h1 position
             h1Position.x += h1Speed * h1Direction.x;
             h1Position.y += h1Speed * h1Direction.y;
 
-            // Bounce off edges for h1
             if (h1Position.x <= safeZone || h1Position.x >= window.innerWidth - h1.offsetWidth - safeZone) {
                 h1Direction.x *= -1;
                 h1Position.x = Math.max(safeZone, Math.min(window.innerWidth - h1.offsetWidth - safeZone, h1Position.x));
@@ -196,11 +224,9 @@
                 h1Position.y = Math.max(safeZone, Math.min(window.innerHeight - h1.offsetHeight - safeZone, h1Position.y));
             }
 
-            // Update ASCII art position
             asciiArtPosition.x += asciiArtSpeed * asciiArtDirection.x;
             asciiArtPosition.y += asciiArtSpeed * asciiArtDirection.y;
 
-            // Bounce off edges for ASCII art
             if (asciiArtPosition.x <= safeZone || asciiArtPosition.x >= window.innerWidth - asciiArt.offsetWidth - safeZone) {
                 asciiArtDirection.x *= -1;
                 asciiArtPosition.x = Math.max(safeZone, Math.min(window.innerWidth - asciiArt.offsetWidth - safeZone, asciiArtPosition.x));
@@ -210,11 +236,9 @@
                 asciiArtPosition.y = Math.max(safeZone, Math.min(window.innerHeight - asciiArt.offsetHeight - safeZone, asciiArtPosition.y));
             }
 
-            // Update star ASCII art position
             starArtPosition.x += starArtSpeed * starArtDirection.x;
             starArtPosition.y += starArtSpeed * starArtDirection.y;
 
-            // Bounce off edges for star ASCII art
             if (starArtPosition.x <= safeZone || starArtPosition.x >= window.innerWidth - starArt.offsetWidth - safeZone) {
                 starArtDirection.x *= -1;
                 starArtPosition.x = Math.max(safeZone, Math.min(window.innerWidth - starArt.offsetWidth - safeZone, starArtPosition.x));
@@ -224,7 +248,6 @@
                 starArtPosition.y = Math.max(safeZone, Math.min(window.innerHeight - starArt.offsetHeight - safeZone, starArtPosition.y));
             }
 
-            // Apply new positions
             h1.style.left = `${h1Position.x}px`;
             h1.style.top = `${h1Position.y}px`;
             asciiArt.style.left = `${asciiArtPosition.x}px`;
@@ -235,16 +258,30 @@
             requestAnimationFrame(moveElements);
         }
 
+        // Default fade times
+        let asciiFadeTime = 30000;
+        let starFadeTime = 10000;
+        let asciiFadeInterval, starFadeInterval;
+
         function fadeInOut() {
-            setInterval(() => {
+            if (asciiFadeInterval) clearInterval(asciiFadeInterval);
+            if (starFadeInterval) clearInterval(starFadeInterval);
+
+            asciiFadeInterval = setInterval(() => {
                 asciiArt.style.opacity = asciiArt.style.opacity == 0 ? 1 : 0;
-            }, 30000); // Change opacity
-            setInterval(() => {
+            }, asciiFadeTime);
+
+            starFadeInterval = setInterval(() => {
                 starArt.style.opacity = starArt.style.opacity == 0 ? 1 : 0;
-            }, 10000); // Change opacity
+            }, starFadeTime);
         }
 
-        // Start the movement and fading
+        document.getElementById('
+fade - time').addEventListener('input', function (e) {
+                asciiFadeTime = Math.max(1000, parseInt(e.target.value, 10));
+        fadeInOut();
+            });
+
         moveElements();
         fadeInOut();
     </script>
