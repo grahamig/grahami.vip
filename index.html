@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YNLO☆SPIV</title>
+    <title>YNLO ☆ SPIV</title>
     <!--favicon-->
     <link rel="icon" href="vipgrahami.ico" type="image/x-icon">
 
@@ -41,7 +41,7 @@
             white-space: pre;
             position: absolute;
             opacity: 0;
-            transition: opacity 3s ease-in-out;
+            transition: opacity 4s ease-in-out;
         }
 
         .star-art {
@@ -74,7 +74,7 @@
 
         #login-container {
             position: fixed;
-            bottom: 60px; /* Move closer to footer */
+            bottom: 20px; /* smaller move closer */
             left: 50%;
             transform: translateX(-50%);
         }
@@ -236,10 +236,10 @@
         function randomFade() {
             setInterval(() => {
                 asciiArt.style.opacity = asciiArt.style.opacity == 0 ? 1 : 0;
-            }, Math.random() * 10000 + 5000); // Random between 5-15 seconds
+            }, Math.random() * 30000 + 5000); // Random between 5-15 seconds
             setInterval(() => {
                 starArt.style.opacity = starArt.style.opacity == 0 ? 1 : 0;
-            }, Math.random() * 10000 + 5000); // Random between 5-15 seconds
+            }, Math.random() * 5000 + 5000); // Random between 5-15 seconds
         }
 
         moveElements();
