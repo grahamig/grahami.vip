@@ -1,0 +1,8 @@
+grahami.vip 
+dev notes
+
+cd /d E:\grahami.vip
+git status
+git add .
+git commit -m "gradient fix?"
+git push origin main
