@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OS☆OV</title>
+    <title>☆OS☆OV☆</title>
+    
+    <!--favicon-->
+    <link rel="icon" href="vipgrahami.ico" type="image/x-icon">
 
     <!--google fonts-->
     <style>
@@ -13,9 +16,9 @@
     <style>
         body {
             font-family: "Slackey", cursive, sans-serif;
-            background: linear-gradient(69deg, #00ffcc, #00e5ff, #ff00b3, #9b00ff, #00ff99, #00ffcc, #cc00ff, #00bfff);
+            background: linear-gradient(-4deg, #00ffcc, #00e5ff, #ff00b3, #9b00ff, #00ff99, #00ffcc, #cc00ff, #00bfff);
             background-size: 444% 444%;
-            animation: gradient 120s ease infinite;
+            animation: gradient 101s ease infinite;
             color: white;
             display: flex;
             justify-content: center;
@@ -226,6 +229,19 @@
         // Start the movement and fading
         moveElements();
         fadeInOut();
+
+        // Login toggle logic
+        const loginButton = document.getElementById('login-button');
+        const loginForm = document.getElementById('login-form');
+        const closeButton = document.getElementById('close-button');
+
+        loginButton.addEventListener('click', () => {
+            loginForm.style.display = loginForm.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        closeButton.addEventListener('click', () => {
+            loginForm.style.display = 'none';
+        });
     </script>
 </body>
 </html>
