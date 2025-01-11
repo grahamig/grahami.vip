@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>grahami's page</title>
+
     <!-- Link to Google Fonts -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Rubik+80s+Fade&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
     </style>
+
     <style>
         body {
-            font-family: "Rubik 80s Fade", cursive, sans-serif;
-            background: linear-gradient(45deg, #ff6a6a, #ff8c42, #e855e5, #ff68d5);
-            background-size: 400% 400%; /* Increased size for smoother transition */
+            font-family: "Slackey", cursive, sans-serif;
+            background: radial-gradient(circle, #ff6a6a, #9b2d2d, #ff8c42, #cc5800, #e855e5, #8a2be2, #ff68d5, #ff1493);
+            background-size: 200% 200%; 
             animation: gradient 60s ease infinite;
             color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            margin: 0; 
             text-align: center;
-            padding: 50px;
         }
 
         h1 {
@@ -25,36 +31,53 @@
             text-shadow: 6px 6px 6px #000000, 6px 6px 0px #000000;
         }
 
+        footer {
+            font-size: 18px;
+        }
+
         @keyframes gradient {
             0% {
-                background-position: 0% 50%;
+                background: radial-gradient(circle, #ff6a6a, #9b2d2d, #ff8c42, #cc5800, #e855e5, #8a2be2, #ff68d5, #ff1493);
+            }
+
+            12.5% {
+                background: radial-gradient(circle, #9b2d2d, #ff6a6a, #cc5800, #ff8c42, #8a2be2, #e855e5, #ff1493, #ff68d5);
             }
 
             25% {
-                background-position: 100% 50%;
+                background: radial-gradient(circle, #cc5800, #ff8c42, #ff6a6a, #9b2d2d, #e855e5, #ff68d5, #8a2be2, #ff1493);
+            }
+
+            37.5% {
+                background: radial-gradient(circle, #e855e5, #ff68d5, #ff8c42, #cc5800, #9b2d2d, #ff6a6a, #ff1493, #8a2be2);
             }
 
             50% {
-                background-position: 200% 50%;
+                background: radial-gradient(circle, #8a2be2, #e855e5, #ff68d5, #ff6a6a, #ff1493, #cc5800, #ff8c42, #9b2d2d);
+            }
+
+            62.5% {
+                background: radial-gradient(circle, #ff1493, #8a2be2, #e855e5, #ff68d5, #cc5800, #ff6a6a, #9b2d2d, #ff8c42);
             }
 
             75% {
-                background-position: 300% 50%;
+                background: radial-gradient(circle, #ff68d5, #ff1493, #ff8c42, #e855e5, #9b2d2d, #cc5800, #8a2be2, #ff6a6a);
+            }
+
+            87.5% {
+                background: radial-gradient(circle, #ff8c42, #ff6a6a, #9b2d2d, #ff1493, #ff68d5, #8a2be2, #cc5800, #e855e5);
             }
 
             100% {
-                background-position: 0% 50%;
+                background: radial-gradient(circle, #ff6a6a, #9b2d2d, #ff8c42, #cc5800, #e855e5, #8a2be2, #ff68d5, #ff1493);
             }
-        }
-
-        footer {
-            margin-top: 50px;
-            font-size: 18px;
         }
     </style>
 </head>
 <body>
-    <h1>howdy!</h1>
-    <footer> if you're here, you're da real VIP <br>grahami &lt;3's you </footer>
+    <div>
+        <h1>howdy!</h1>
+        <footer> if you're here, you're da real VIP <br>grahami &lt;3's you </footer>
+    </div>
 </body>
 </html>
