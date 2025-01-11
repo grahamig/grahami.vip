@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>grahami's page</title>
+    <title>VIP ONLY</title>
 
-    <!--Google Fonts -->
+    <!-- Google Fonts -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
     </style>
@@ -24,20 +24,25 @@
             margin: 0;
             text-align: center;
             overflow: hidden;
+            position: relative;
         }
 
         h1 {
             font-size: 42px;
             color: white;
             text-shadow: 6px 6px 6px #000000, 6px 6px 0px #000000;
-            animation: bounce 5s infinite ease-in-out;
             position: absolute;
+            animation: bounce 5s infinite ease-in-out;
         }
 
         footer {
             font-size: 18px;
             text-shadow: 6px 6px 6px #000000;
             position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
         }
 
         @keyframes gradient {
@@ -86,5 +91,36 @@
         <h1>howdy!</h1>
         <footer> if you're here, you're da real VIP <br>grahami &lt;3's you </footer>
     </div>
+
+    <script>
+        // JavaScript for slow "bouncing" h1 similar to DVD screensaver
+        let h1 = document.querySelector('h1');
+        let h1Speed = 0.2; // Adjust this for speed of movement
+        let h1Direction = { x: 1, y: 1 }; // Directions of movement
+        let h1Position = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+
+        function moveH1() {
+            // Update position
+            h1Position.x += h1Speed * h1Direction.x;
+            h1Position.y += h1Speed * h1Direction.y;
+
+            // Bounce off edges
+            if (h1Position.x <= 0 || h1Position.x >= window.innerWidth - h1.offsetWidth) {
+                h1Direction.x *= -1;
+            }
+            if (h1Position.y <= 0 || h1Position.y >= window.innerHeight - h1.offsetHeight) {
+                h1Direction.y *= -1;
+            }
+
+            // Apply new position
+            h1.style.left = `${h1Position.x}px`;
+            h1.style.top = `${h1Position.y}px`;
+
+            requestAnimationFrame(moveH1);
+        }
+
+        // Start the movement
+        moveH1();
+    </script>
 </body>
 </html>
