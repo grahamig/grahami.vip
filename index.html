@@ -15,25 +15,28 @@
             font-family: "Slackey", cursive, sans-serif;
             background: linear-gradient(69deg, #00ffcc, #00e5ff, #ff00b3, #9b00ff, #00ff99, #00ffcc, #cc00ff, #00bfff);
             background-size: 400% 400%;
-            animation: gradient 66s linear infinite;
-            color: #ffffff;
+            animation: gradient 66s ease infinite, pulse 3s ease infinite;
+            color: white;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             text-align: center;
+            overflow: hidden;
         }
 
         h1 {
             font-size: 42px;
             color: white;
-            text-shadow: 6px 6px 6px #000000,6px 6px 0px #000000;
+            text-shadow: 6px 6px 6px #000000, 6px 6px 0px #000000;
+            animation: floating 10s ease-in-out infinite;
         }
 
         footer {
             font-size: 18px;
             text-shadow: 6px 6px 6px #000000;
+            animation: floating 10s ease-in-out infinite;
         }
 
         @keyframes gradient {
@@ -55,6 +58,34 @@
 
             100% {
                 background-position: 100% 50%;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                filter: brightness(1.1);
+            }
+
+            50% {
+                filter: brightness(0.8);
+            }
+
+            100% {
+                filter: brightness(1.1);
+            }
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0);
             }
         }
     </style>

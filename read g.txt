@@ -4,5 +4,5 @@ dev notes
 cd /d E:\grahami.vip
 git status
 git add .
-git commit -m "shadow & gradient changes"
+git commit -m "get trippy"
 git push origin main
