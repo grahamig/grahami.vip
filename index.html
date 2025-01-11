@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YNLOonly☆vipsSPIV</title>
+    <title>only☆vips</title>
     <!--favicon-->
     <link rel="icon" href="vipgrahami.ico" type="image/x-icon">
 
@@ -74,9 +74,9 @@
 
         #login-container {
             position: absolute;
-            bottom: 20px; /* smaller move closer */
+            top: calc(50% + 40px); /* Adjust this value to position it correctly */
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, -50%);
         }
 
         @keyframes gradient {
@@ -236,10 +236,10 @@
         function randomFade() {
             setInterval(() => {
                 asciiArt.style.opacity = asciiArt.style.opacity == 0 ? 1 : 0;
-            }, Math.random() * 30000 + 5000); // Random between 5-15 seconds
+            }, Math.random() * 30000 + 5000); // Random between 30-35 seconds?
             setInterval(() => {
                 starArt.style.opacity = starArt.style.opacity == 0 ? 1 : 0;
-            }, Math.random() * 5000 + 5000); // Random between 5-15 seconds
+            }, Math.random() * 5000 + 5000); // Random between 5-10 seconds?
         }
 
         moveElements();
