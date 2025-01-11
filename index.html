@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>only☆vips</title>
+    <title>only ☆ vips</title>
     <!--favicon-->
     <link rel="icon" href="vipgrahami.ico" type="image/x-icon">
 
@@ -74,7 +74,7 @@
 
         #login-container {
             position: absolute;
-            top: calc(50% + 40px); /* Adjust this value to position it correctly */
+            top: calc(50% + 50px); /* Adjusted value to move it lower */
             left: 50%;
             transform: translate(-50%, -50%);
         }
@@ -148,9 +148,13 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠀⠀⣰⣿⣿⣾⣿⠿⢿⣷⣀⢀⣿⡇⠁⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠉⠁⠀⠀⠀⠀⠙⢿⣿⣿⠇⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀
         </pre>
-        <footer>you're a <a href="https://www.instagram.com/grahamiiig" target="_blank" class="star">☆</a>!</footer>
+        <footer>
+            <a href="https://www.instagram.com/grahamiiig" target="_blank" style="color: white; text-decoration: none;">
+                you're a <span class="star">☆</span>!
+            </a>
+        </footer>
 
         <!-- Login -->
         <div id="login-container">
@@ -236,10 +240,10 @@
         function randomFade() {
             setInterval(() => {
                 asciiArt.style.opacity = asciiArt.style.opacity == 0 ? 1 : 0;
-            }, Math.random() * 30000 + 5000); // Random between 30-35 seconds?
+            }, Math.random() * 30000 + 5000); // Random between 5-15 seconds
             setInterval(() => {
                 starArt.style.opacity = starArt.style.opacity == 0 ? 1 : 0;
-            }, Math.random() * 5000 + 5000); // Random between 5-10 seconds?
+            }, Math.random() * 5000 + 5000); // Random between 5-15 seconds
         }
 
         moveElements();
