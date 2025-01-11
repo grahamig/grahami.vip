@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONLY ☆☆☆☆</title>
+    <title>☆☆☆☆</title>
     <!--favicon-->
     <link rel="icon" href="vipgrahami.ico" type="image/x-icon">
 
@@ -77,6 +77,15 @@
             margin-top: 10px;
         }
 
+        #front-page-content {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            pointer-events: none; /* Prevent interfering with login */
+        }
+
         @keyframes gradient {
             0% {
                 background-position: 0% 50%;
@@ -101,15 +110,16 @@
     </style>
 </head>
 <body>
-    <div>
-        <!-- Login -->
-        <div id="login-container">
-            <button id="login-button">Login</button>
-            <div id="login-form">
-                <input type="text" id="uname" placeholder="uname">
-                <input type="password" id="pword" placeholder="pword">
-                <button id="close-button">x</button>
-            </div>
+    <!-- Front Page Content -->
+    <div id="front-page-content"></div>
+
+    <!-- Login -->
+    <div id="login-container">
+        <button id="login-button">Login</button>
+        <div id="login-form">
+            <input type="text" id="uname" placeholder="uname">
+            <input type="password" id="pword" placeholder="pword">
+            <button id="close-button">x</button>
         </div>
     </div>
 
@@ -126,6 +136,19 @@
         closeButton.addEventListener('click', () => {
             loginForm.style.display = 'none';
         });
+
+        // Dynamically load fp.html content
+        fetch('fp.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Failed to load fp.html');
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('front-page-content').innerHTML = data;
+                // Ensure fp.html's content doesn't interfere with the login
+                document.getElementById('front-page-content').style.pointerEvents = 'none';
+            })
+            .catch(error => console.error('Error loading front page content:', error));
     </script>
 </body>
 </html>
