@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>☆☆☆☆</title>
+    <title>☆☆vip☆☆</title>
     <!--favicon-->
     <link rel="icon" href="vipgrahami.ico" type="image/x-icon">
 
@@ -144,9 +144,31 @@
                 return response.text();
             })
             .then(data => {
-                document.getElementById('front-page-content').innerHTML = data;
-                // Ensure fp.html's content doesn't interfere with the login
-                document.getElementById('front-page-content').style.pointerEvents = 'none';
+                // Create a temporary container to parse the fetched HTML
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = data;
+
+                // Extract and apply styles
+                const styles = tempDiv.querySelectorAll('style, link[rel="stylesheet"]');
+                styles.forEach(style => document.head.appendChild(style));
+
+                // Extract and apply scripts
+                const scripts = tempDiv.querySelectorAll('script');
+                scripts.forEach(script => {
+                    const newScript = document.createElement('script');
+                    if (script.src) {
+                        // If the script has a src attribute, copy it
+                        newScript.src = script.src;
+                    } else {
+                        // Otherwise, copy the inline script content
+                        newScript.textContent = script.textContent;
+                    }
+                    document.body.appendChild(newScript);
+                });
+
+                // Inject the rest of the content into the page
+                const content = tempDiv.querySelector('body') || tempDiv;
+                document.getElementById('front-page-content').appendChild(content);
             })
             .catch(error => console.error('Error loading front page content:', error));
     </script>
