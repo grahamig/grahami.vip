@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONLY☆VIPS</title>
+    <title>YNLO☆SPIV</title>
     <!--favicon-->
-    <link rel="icon" href="vipgrahami32.ico" type="image/x-icon">
+    <link rel="icon" href="vipgrahami.ico" type="image/x-icon">
 
     <!--google fonts-->
     <style>
@@ -41,7 +41,7 @@
             white-space: pre;
             position: absolute;
             opacity: 0;
-            transition: opacity 4s ease-in-out;
+            transition: opacity 3s ease-in-out;
         }
 
         .star-art {
@@ -49,7 +49,7 @@
             white-space: pre;
             position: absolute;
             opacity: 0;
-            transition: opacity 4s ease-in-out;
+            transition: opacity 3s ease-in-out;
         }
 
         footer {
@@ -74,28 +74,9 @@
 
         #login-container {
             position: fixed;
-            bottom: 100px;
+            bottom: 60px; /* Move closer to footer */
             left: 50%;
             transform: translateX(-50%);
-        }
-
-        #fade-control {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 10px;
-            border-radius: 8px;
-            color: white;
-            font-family: 'Slackey', cursive;
-        }
-
-        #fade-time {
-            margin-left: 10px;
-            width: 80px;
-            padding: 5px;
-            border-radius: 4px;
-            border: none;
         }
 
         @keyframes gradient {
@@ -167,7 +148,7 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠀⠀⣰⣿⣿⣾⣿⠿⢿⣷⣀⢀⣿⡇⠁⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠉⠁⠀⠀⠀⠀⠙⢿⣿⣿⠇⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀
         </pre>
         <footer>you're a <a href="https://www.instagram.com/grahamiiig" target="_blank" class="star">☆</a>!</footer>
 
@@ -186,12 +167,6 @@
             ">
                 Login
             </button>
-        </div>
-
-        <!-- Fade Control -->
-        <div id="fade-control">
-            <label for="fade-time" style="font-size: 14px;">Set Fade Time (ms):</label>
-            <input type="number" id="fade-time" value="30000" min="1000" step="1000">
         </div>
     </div>
 
@@ -258,32 +233,17 @@
             requestAnimationFrame(moveElements);
         }
 
-        // Default fade times
-        let asciiFadeTime = 30000;
-        let starFadeTime = 10000;
-        let asciiFadeInterval, starFadeInterval;
-
-        function fadeInOut() {
-            if (asciiFadeInterval) clearInterval(asciiFadeInterval);
-            if (starFadeInterval) clearInterval(starFadeInterval);
-
-            asciiFadeInterval = setInterval(() => {
+        function randomFade() {
+            setInterval(() => {
                 asciiArt.style.opacity = asciiArt.style.opacity == 0 ? 1 : 0;
-            }, asciiFadeTime);
-
-            starFadeInterval = setInterval(() => {
+            }, Math.random() * 10000 + 5000); // Random between 5-15 seconds
+            setInterval(() => {
                 starArt.style.opacity = starArt.style.opacity == 0 ? 1 : 0;
-            }, starFadeTime);
+            }, Math.random() * 10000 + 5000); // Random between 5-15 seconds
         }
 
-        document.getElementById('
-fade - time').addEventListener('input', function (e) {
-                asciiFadeTime = Math.max(1000, parseInt(e.target.value, 10));
-        fadeInOut();
-            });
-
         moveElements();
-        fadeInOut();
+        randomFade();
     </script>
 </body>
 </html>
