@@ -34,6 +34,14 @@
             position: absolute;
         }
 
+        .ascii-art {
+            font-size: 16px;
+            white-space: pre;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 3s ease-in-out;
+        }
+
         footer {
             font-size: 22px;
             text-shadow: 3px 3px 3px #000000, 3px 3px 0px #000000;
@@ -70,23 +78,51 @@
 <body>
     <div>
         <h1>howdy<br />folks!</h1>
-        <footer>you're da real VIP<br>&lt;3 you </footer>
+        <div class="ascii-art">
+            ,'-',
+            :-----:
+            (''' , - , ''')
+            \   ' .  , `  /
+            \  '   ^  ? /
+            \ `   -  ,'
+            `j_ _,'
+            ,- -`\ \  /f
+            ,-      \_\/_/'-
+            ,                 `,
+            ,                   ,
+            /\          \
+            |    /             \   ',
+            ,   f  :           :`,  ,
+            <...\ , : ,- '
+\,,,,\ ;           : j  '
+                  \ \ : /^^^^'
+                  \ \ ; '' ':
+    \   -,         -`.../
+     ' - -,`,--`
+                  \_._'-- '---:
+                  Storm
+        </div>
+        <footer>you're a ☆!</footer>
     </div>
 
     <script>
         // DVD screensaver animation
         let h1 = document.querySelector('h1');
+        let asciiArt = document.querySelector('.ascii-art');
         let h1Speed = 0.5; // Constant speed for movement
-        let h1Direction = { x: 1, y: 1 }; // Directions of movement
+        let asciiArtSpeed = 0.5; // Speed for ASCII art movement
+        let h1Direction = { x: 1, y: 1 }; // Directions of movement for h1
+        let asciiArtDirection = { x: -1, y: 1 }; // Directions of movement for ASCII art
         let h1Position = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+        let asciiArtPosition = { x: window.innerWidth / 3, y: window.innerHeight / 3 };
         let safeZone = 18; // Safe zone to prevent the text from going off-screen
 
-        function moveH1() {
-            // Update position
+        function moveElements() {
+            // Update h1 position
             h1Position.x += h1Speed * h1Direction.x;
             h1Position.y += h1Speed * h1Direction.y;
 
-            // Bounce off edges
+            // Bounce off edges for h1
             if (h1Position.x <= safeZone || h1Position.x >= window.innerWidth - h1.offsetWidth - safeZone) {
                 h1Direction.x *= -1;
                 h1Position.x = Math.max(safeZone, Math.min(window.innerWidth - h1.offsetWidth - safeZone, h1Position.x));
@@ -96,15 +132,38 @@
                 h1Position.y = Math.max(safeZone, Math.min(window.innerHeight - h1.offsetHeight - safeZone, h1Position.y));
             }
 
-            // Apply new position
+            // Update ASCII art position
+            asciiArtPosition.x += asciiArtSpeed * asciiArtDirection.x;
+            asciiArtPosition.y += asciiArtSpeed * asciiArtDirection.y;
+
+            // Bounce off edges for ASCII art
+            if (asciiArtPosition.x <= safeZone || asciiArtPosition.x >= window.innerWidth - asciiArt.offsetWidth - safeZone) {
+                asciiArtDirection.x *= -1;
+                asciiArtPosition.x = Math.max(safeZone, Math.min(window.innerWidth - asciiArt.offsetWidth - safeZone, asciiArtPosition.x));
+            }
+            if (asciiArtPosition.y <= safeZone || asciiArtPosition.y >= window.innerHeight - asciiArt.offsetHeight - safeZone) {
+                asciiArtDirection.y *= -1;
+                asciiArtPosition.y = Math.max(safeZone, Math.min(window.innerHeight - asciiArt.offsetHeight - safeZone, asciiArtPosition.y));
+            }
+
+            // Apply new positions
             h1.style.left = `${h1Position.x}px`;
             h1.style.top = `${h1Position.y}px`;
+            asciiArt.style.left = `${asciiArtPosition.x}px`;
+            asciiArt.style.top = `${asciiArtPosition.y}px`;
 
-            requestAnimationFrame(moveH1);
+            requestAnimationFrame(moveElements);
         }
 
-        // Start the movement
-        moveH1();
+        function fadeInOut() {
+            setInterval(() => {
+                asciiArt.style.opacity = asciiArt.style.opacity == 0 ? 1 : 0;
+            }, 3000); // Change opacity every 3 seconds
+        }
+
+        // Start the movement and fading
+        moveElements();
+        fadeInOut();
     </script>
 </body>
 </html>
