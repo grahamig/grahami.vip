@@ -4,5 +4,5 @@ dev notes
 cd /d E:\grahami.vip
 git status
 git add .
-git commit -m "sunset gradient & footer fix"
+git commit -m "sunset landing page complete"
 git push origin main
