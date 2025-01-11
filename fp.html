@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONLY☆VIPS</title>
+    <title>☆ ONLY ☆ VIPS - Front Page</title>
     <!--favicon-->
     <link rel="icon" href="vipgrahami.ico" type="image/x-icon">
 
@@ -19,14 +19,13 @@
             background-size: 444% 444%;
             animation: gradient 99s ease infinite;
             color: white;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center;
-            overflow: hidden;
-            position: relative;
         }
 
         h1 {
@@ -34,45 +33,37 @@
             color: white;
             text-shadow: 6px 6px 6px #000000, 6px 6px 0px #000000;
             position: absolute;
+            z-index: 10;
         }
 
-        .ascii-art {
-            font-size: 9px;
+        .ascii-art, .star-art {
+            font-size: 14px;
             white-space: pre;
             position: absolute;
-            opacity: 0;
-            transition: opacity 4s ease-in-out;
-        }
-
-        .star-art {
-            font-size: 19px;
-            white-space: pre;
-            position: absolute;
-            opacity: 0;
-            transition: opacity 3s ease-in-out;
-            top: 20%;
-            left: 20%;
+            opacity: 1;
+            z-index: 9;
+            transition: opacity 1.5s ease-in-out;
         }
 
         footer {
             font-size: 22px;
             text-shadow: 3px 3px 3px #000000, 3px 3px 0px #000000;
             position: absolute;
-            cursor: pointer;
-            color: white;
-            text-decoration: none;
-            top: 50%;
+            bottom: 20px;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translateX(-50%);
             z-index: 1000;
         }
 
-        .star {
-            font-size: 32px;
-            cursor: pointer;
-            color: white;
-            text-decoration: none;
-        }
+            footer a {
+                color: white;
+                text-decoration: none;
+                font-size: 24px;
+            }
+
+                footer a:hover {
+                    text-shadow: 0px 0px 15px #ff00b3;
+                }
 
         @keyframes gradient {
             0% {
@@ -98,102 +89,72 @@
     </style>
 </head>
 <body>
-    <div>
-        <h1>howdy<br />folks!</h1>
+    <h1>Howdy Folks!</h1>
 
-        <!--ascii arts-->
-        <pre class="ascii-art">
-            <!-- Your ASCII art goes here -->
-        </pre>
+    <!-- ASCII Art -->
+    <pre class="ascii-art" style="top: 50px; left: 50px;">
+        ___  _____  ____    _    _  __  __  ___   ___   ___   ___  
+       / _ \| ____|/ ___|  / \  | |/ / |  \/  | | _ ) | __| | __| 
+      | (_) |  _| | |     / _ \ | ' /  | |\/| | | _ \ | _|  | _|  
+       \___/|_|___|_|__  /_/ \_\|_|_\  |_|__|_| |___/ |___| |___| 
+        _|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""| 
+        "`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-' 
+    </pre>
 
-        <pre class="star-art">
-            <!-- Your star art goes here -->
-        </pre>
+    <!-- Star Art -->
+    <pre class="star-art" style="top: 200px; right: 50px;">
+        ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆
+        ☆       ☆     ☆       ☆     ☆       ☆     ☆
+        ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆
+    </pre>
 
-        <footer>
-            <a href="https://www.instagram.com/grahamiiig" target="_blank" style="color: white; text-decoration: none;">
-                you're a <span class="star">☆</span>!
-            </a>
-        </footer>
-    </div>
+    <!-- Footer -->
+    <footer>
+        <a href="https://www.instagram.com/grahamiiig" target="_blank">You're a ☆!</a>
+    </footer>
 
     <script>
-        // DVD screensaver animation
-        let h1 = document.querySelector('h1');
-        let asciiArt = document.querySelector('.ascii-art');
-        let starArt = document.querySelector('.star-art');
+        // Floating animations for elements
+        const h1 = document.querySelector('h1');
+        const asciiArt = document.querySelector('.ascii-art');
+        const starArt = document.querySelector('.star-art');
 
-        let h1Speed = 0.6;
-        let asciiArtSpeed = 0.3;
-        let starArtSpeed = 1;
+        function animateElement(element, speedX, speedY) {
+            let directionX = 1;
+            let directionY = 1;
+            let posX = parseInt(window.innerWidth / 4);
+            let posY = parseInt(window.innerHeight / 4);
 
-        let h1Direction = { x: 1, y: 1 };
-        let asciiArtDirection = { x: -1, y: 1 };
-        let starArtDirection = { x: 1, y: -1 };
+            function move() {
+                posX += speedX * directionX;
+                posY += speedY * directionY;
 
-        let h1Position = { x: 100, y: 100 };
-        let asciiArtPosition = { x: 200, y: 200 };
-        let starArtPosition = { x: 300, y: 300 };
+                // Bounce off edges
+                if (posX <= 0 || posX + element.offsetWidth >= window.innerWidth) {
+                    directionX *= -1;
+                }
+                if (posY <= 0 || posY + element.offsetHeight >= window.innerHeight) {
+                    directionY *= -1;
+                }
 
-        const safeZone = 18;
+                element.style.left = `${posX}px`;
+                element.style.top = `${posY}px`;
 
-        function moveElements() {
-            // Move h1
-            h1Position.x += h1Speed * h1Direction.x;
-            h1Position.y += h1Speed * h1Direction.y;
-
-            if (h1Position.x <= safeZone || h1Position.x >= window.innerWidth - h1.offsetWidth - safeZone) {
-                h1Direction.x *= -1;
-            }
-            if (h1Position.y <= safeZone || h1Position.y >= window.innerHeight - h1.offsetHeight - safeZone) {
-                h1Direction.y *= -1;
+                requestAnimationFrame(move);
             }
 
-            h1.style.left = `${h1Position.x}px`;
-            h1.style.top = `${h1Position.y}px`;
-
-            // Move ASCII art
-            asciiArtPosition.x += asciiArtSpeed * asciiArtDirection.x;
-            asciiArtPosition.y += asciiArtSpeed * asciiArtDirection.y;
-
-            if (asciiArtPosition.x <= safeZone || asciiArtPosition.x >= window.innerWidth - asciiArt.offsetWidth - safeZone) {
-                asciiArtDirection.x *= -1;
-            }
-            if (asciiArtPosition.y <= safeZone || asciiArtPosition.y >= window.innerHeight - asciiArt.offsetHeight - safeZone) {
-                asciiArtDirection.y *= -1;
-            }
-
-            asciiArt.style.left = `${asciiArtPosition.x}px`;
-            asciiArt.style.top = `${asciiArtPosition.y}px`;
-
-            // Move star art
-            starArtPosition.x += starArtSpeed * starArtDirection.x;
-            starArtPosition.y += starArtSpeed * starArtDirection.y;
-
-            if (starArtPosition.x <= safeZone || starArtPosition.x >= window.innerWidth - starArt.offsetWidth - safeZone) {
-                starArtDirection.x *= -1;
-            }
-            if (starArtPosition.y <= safeZone || starArtPosition.y >= window.innerHeight - starArt.offsetHeight - safeZone) {
-                starArtDirection.y *= -1;
-            }
-
-            starArt.style.left = `${starArtPosition.x}px`;
-            starArt.style.top = `${starArtPosition.y}px`;
-
-            requestAnimationFrame(moveElements);
+            move();
         }
 
-        // Load animations
+        // Start animations
         window.onload = () => {
-            setTimeout(() => {
-                asciiArt.style.opacity = 1;
-            }, 1000);
+            h1.style.position = 'absolute';
+            asciiArt.style.position = 'absolute';
+            starArt.style.position = 'absolute';
 
-            setTimeout(() => {
-                starArt.style.opacity = 1;
-            }, 2000);
-
-            moveElements();
+            animateElement(h1, 1, 1);
+            animateElement(asciiArt, 0.5, 0.7);
+            animateElement(starArt, 1.2, 0.6);
         };
     </script>
 </body>
