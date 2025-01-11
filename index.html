@@ -32,7 +32,7 @@
             color: white;
             text-shadow: 6px 6px 6px #000000, 6px 6px 0px #000000;
             position: absolute;
-            animation: bounce 5s infinite ease-in-out;
+            animation: bounce 20s infinite ease-in-out;
         }
 
         footer {
@@ -73,15 +73,15 @@
             }
 
             25% {
-                transform: translateX(90vw) translateY(20vh);
+                transform: translateX(80vw) translateY(10vh);
             }
 
             50% {
-                transform: translateX(10vw) translateY(70vh);
+                transform: translateX(90vw) translateY(20vh);
             }
 
             75% {
-                transform: translateX(80vw) translateY(10vh);
+                transform: translateX(10vw) translateY(70vh);
             }
         }
     </style>
@@ -93,10 +93,10 @@
     </div>
 
     <script>
-        // JavaScript for slow "bouncing" h1 similar to DVD screensaver
+        // DVD screensaver animation
         let h1 = document.querySelector('h1');
-        let h1Speed = 0.05; // Slowed down speed of movement
-        let h1Direction = { x: 1, y: 1 }; // Directions of movement
+        let h1Speed = 1; // movement speed
+        let h1Direction = { x: 1, y: 1 }; // movement direction
         let h1Position = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
 
         function moveH1() {
@@ -104,7 +104,7 @@
             h1Position.x += h1Speed * h1Direction.x;
             h1Position.y += h1Speed * h1Direction.y;
 
-            // Bounce off edges, ensuring it stays within the viewport boundaries
+            // Bounce off edges
             if (h1Position.x <= 0 || h1Position.x >= window.innerWidth - h1.offsetWidth) {
                 h1Direction.x *= -1;
             }
