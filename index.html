@@ -32,7 +32,6 @@
             color: white;
             text-shadow: 6px 6px 6px #000000, 6px 6px 0px #000000;
             position: absolute;
-            animation: bounce 20s infinite ease-in-out;
         }
 
         footer {
@@ -66,39 +65,21 @@
                 background-position: 100% 50%;
             }
         }
-
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateX(0) translateY(0);
-            }
-
-            25% {
-                transform: translateX(80vw) translateY(10vh);
-            }
-
-            50% {
-                transform: translateX(90vw) translateY(20vh);
-            }
-
-            75% {
-                transform: translateX(10vw) translateY(70vh);
-            }
-        }
     </style>
 </head>
 <body>
     <div>
-        <h1>howdy!</h1>
+        <h1>howdy<br />folks!</h1>
         <footer> if you're here, you're da real VIP <br>grahami &lt;3 you </footer>
     </div>
 
     <script>
         // DVD screensaver animation
         let h1 = document.querySelector('h1');
-        let h1Speed = 2; // Adjusted speed to slow down the movement
+        let h1Speed = 2; // Constant speed for movement
         let h1Direction = { x: 1, y: 1 }; // Directions of movement
         let h1Position = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-        let safeZone = 10; // Safe zone to prevent the text from going off-screen
+        let safeZone = 20; // Safe zone to prevent the text from going off-screen
 
         function moveH1() {
             // Update position
