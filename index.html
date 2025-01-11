@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>☆ONLY☆VIPS☆</title>
+    <title>ONLY☆VIPS</title>
 
     <!--google fonts-->
     <style>
@@ -89,15 +89,16 @@
 <body>
     <div>
         <h1>howdy!</h1>
-        <footer> if you're here, you're da real VIP <br>grahami &lt;3's you </footer>
+        <footer> if you're here, you're da real VIP <br>grahami &lt;3 you </footer>
     </div>
 
     <script>
         // DVD screensaver animation
         let h1 = document.querySelector('h1');
-        let h1Speed = 0.5; // Adjusted speed to slow down the movement
+        let h1Speed = 2; // Adjusted speed to slow down the movement
         let h1Direction = { x: 1, y: 1 }; // Directions of movement
         let h1Position = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+        let safeZone = 10; // Safe zone to prevent the text from going off-screen
 
         function moveH1() {
             // Update position
@@ -105,13 +106,13 @@
             h1Position.y += h1Speed * h1Direction.y;
 
             // Bounce off edges
-            if (h1Position.x <= 0 || h1Position.x >= window.innerWidth - h1.offsetWidth) {
+            if (h1Position.x <= safeZone || h1Position.x >= window.innerWidth - h1.offsetWidth - safeZone) {
                 h1Direction.x *= -1;
-                h1Position.x = Math.max(0, Math.min(window.innerWidth - h1.offsetWidth, h1Position.x));
+                h1Position.x = Math.max(safeZone, Math.min(window.innerWidth - h1.offsetWidth - safeZone, h1Position.x));
             }
-            if (h1Position.y <= 0 || h1Position.y >= window.innerHeight - h1.offsetHeight) {
+            if (h1Position.y <= safeZone || h1Position.y >= window.innerHeight - h1.offsetHeight - safeZone) {
                 h1Direction.y *= -1;
-                h1Position.y = Math.max(0, Math.min(window.innerHeight - h1.offsetHeight, h1Position.y));
+                h1Position.y = Math.max(safeZone, Math.min(window.innerHeight - h1.offsetHeight - safeZone, h1Position.y));
             }
 
             // Apply new position
