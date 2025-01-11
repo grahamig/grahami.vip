@@ -4,5 +4,5 @@ dev notes
 cd /d E:\grahami.vip
 git status
 git add .
-git commit -m "new colors neon"
+git commit -m "footer shadow, gradient changes"
 git push origin main
