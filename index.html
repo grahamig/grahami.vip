@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONLY☆VIPS</title>
+    <title>☆ONLY☆VIPS☆</title>
 
     <!--google fonts-->
     <style>
@@ -15,7 +15,7 @@
             font-family: "Slackey", cursive, sans-serif;
             background: linear-gradient(69deg, #00ffcc, #00e5ff, #ff00b3, #9b00ff, #00ff99, #00ffcc, #cc00ff, #00bfff);
             background-size: 444% 444%;
-            animation: gradient 120s ease infinite;
+            animation: gradient 180s ease infinite;
             color: white;
             display: flex;
             justify-content: center;
@@ -28,15 +28,15 @@
         }
 
         h1 {
-            font-size: 42px;
+            font-size: 44px;
             color: white;
             text-shadow: 6px 6px 6px #000000, 6px 6px 0px #000000;
             position: absolute;
         }
 
         footer {
-            font-size: 18px;
-            text-shadow: 6px 6px 6px #000000, 6px 6px 0px #000000;
+            font-size: 22px;
+            text-shadow: 3px 3px 3px #000000, 3px 3px 0px #000000;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -76,10 +76,10 @@
     <script>
         // DVD screensaver animation
         let h1 = document.querySelector('h1');
-        let h1Speed = 6; // Constant speed for movement
+        let h1Speed = 0.3; // Constant speed for movement
         let h1Direction = { x: 1, y: 1 }; // Directions of movement
         let h1Position = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-        let safeZone = 20; // Safe zone to prevent the text from going off-screen
+        let safeZone = 18; // Safe zone to prevent the text from going off-screen
 
         function moveH1() {
             // Update position
