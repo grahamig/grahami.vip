@@ -52,13 +52,6 @@
             z-index: 1000;
         }
 
-        .star {
-            font-size: 32px;
-            cursor: pointer;
-            color: white;
-            text-decoration: none;
-        }
-
         #login-container {
             position: absolute;
             bottom: 30px;
@@ -66,7 +59,7 @@
             transform: translateX(-50%);
         }
 
-        #login-button, #close-button {
+        #login-button {
             font-size: 18px;
             padding: 10px 20px;
             background-color: #ff00b3;
@@ -82,6 +75,29 @@
             display: none;
             flex-direction: column;
             align-items: center;
+        }
+
+            #login-form input {
+                font-size: 18px;
+                padding: 10px;
+                margin: 5px 0;
+                border: none;
+                border-radius: 8px;
+                box-shadow: 2px 2px 10px #000000;
+                font-family: 'Slackey', cursive;
+            }
+
+        #close-button {
+            font-size: 18px;
+            padding: 5px 10px;
+            background-color: #ff00b3;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            box-shadow: 2px 2px 10px #000000;
+            font-family: 'Slackey', cursive;
+            margin-top: 10px;
         }
 
         @keyframes gradient {
@@ -108,28 +124,72 @@
     </style>
 </head>
 <body>
-    <div>
-        <h1>howdy<br />folks!</h1>
-        <div id="front-page-content"></div>
+    <div id="front-page-content"></div>
 
-        <footer>
-            <a href="https://www.instagram.com/grahamiiig" target="_blank" style="color: white; text-decoration: none;">
-                you're a <span class="star">☆</span>!
-            </a>
-        </footer>
+    <footer>
+        <a href="https://www.instagram.com/grahamiiig" target="_blank" style="color: white; text-decoration: none;">
+            you're a <span class="star">☆</span>!
+        </a>
+    </footer>
 
-        <div id="login-container">
-            <button id="login-button">Login</button>
-            <div id="login-form">
-                <input type="text" id="uname" placeholder="uname">
-                <input type="password" id="pword" placeholder="pword">
-                <button id="close-button">x</button>
-            </div>
+    <div id="login-container">
+        <button id="login-button">Login</button>
+        <div id="login-form">
+            <input type="text" id="uname" placeholder="uname">
+            <input type="password" id="pword" placeholder="pword">
+            <button id="close-button">x</button>
         </div>
     </div>
 
     <script>
-        // Login form toggle
+        // Load content from fp.html into front-page-content
+        fetch('fp.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('front-page-content').innerHTML = html;
+
+                // Start random fading and move elements after content is loaded
+                const asciiArt = document.querySelector('.ascii-art');
+                const starArt = document.querySelector('.star-art');
+
+                function randomFade(element) {
+                    const randomTime = Math.random() * 10000 + 5000;
+                    setTimeout(() => {
+                        element.style.opacity = element.style.opacity == 1 ? 0 : 1;
+                        randomFade(element);
+                    }, randomTime);
+                }
+
+                randomFade(asciiArt);
+                randomFade(starArt);
+
+                let h1 = document.querySelector('h1');
+                let h1Speed = 0.6;
+                let h1Position = { x: 100, y: 100 };
+                let h1Direction = { x: 1, y: 1 };
+
+                const safeZone = 18;
+
+                function moveElements() {
+                    h1Position.x += h1Speed * h1Direction.x;
+                    h1Position.y += h1Speed * h1Direction.y;
+
+                    if (h1Position.x <= safeZone || h1Position.x >= window.innerWidth - h1.offsetWidth - safeZone) {
+                        h1Direction.x *= -1;
+                    }
+                    if (h1Position.y <= safeZone || h1Position.y >= window.innerHeight - h1.offsetHeight - safeZone) {
+                        h1Direction.y *= -1;
+                    }
+
+                    h1.style.left = `${h1Position.x}px`;
+                    h1.style.top = `${h1Position.y}px`;
+
+                    requestAnimationFrame(moveElements);
+                }
+
+                moveElements();
+            });
+
         const loginButton = document.getElementById('login-button');
         const loginForm = document.getElementById('login-form');
         const closeButton = document.getElementById('close-button');
@@ -141,94 +201,6 @@
         closeButton.addEventListener('click', () => {
             loginForm.style.display = 'none';
         });
-
-        // DVD screensaver animation
-        let h1 = document.querySelector('h1');
-        let asciiArt = document.querySelector('.ascii-art');
-        let starArt = document.querySelector('.star-art');
-
-        let h1Speed = 0.6;
-        let asciiArtSpeed = 0.3;
-        let starArtSpeed = 1;
-
-        let h1Direction = { x: 1, y: 1 };
-        let asciiArtDirection = { x: -1, y: 1 };
-        let starArtDirection = { x: 1, y: -1 };
-
-        let h1Position = { x: 100, y: 100 };
-        let asciiArtPosition = { x: 200, y: 200 };
-        let starArtPosition = { x: 300, y: 300 };
-
-        const safeZone = 18;
-
-        function moveElements() {
-            h1Position.x += h1Speed * h1Direction.x;
-            h1Position.y += h1Speed * h1Direction.y;
-
-            if (h1Position.x <= safeZone || h1Position.x >= window.innerWidth - h1.offsetWidth - safeZone) {
-                h1Direction.x *= -1;
-            }
-            if (h1Position.y <= safeZone || h1Position.y >= window.innerHeight - h1.offsetHeight - safeZone) {
-                h1Direction.y *= -1;
-            }
-
-            h1.style.left = `${h1Position.x}px`;
-            h1.style.top = `${h1Position.y}px`;
-
-            asciiArtPosition.x += asciiArtSpeed * asciiArtDirection.x;
-            asciiArtPosition.y += asciiArtSpeed * asciiArtDirection.y;
-
-            if (asciiArtPosition.x <= safeZone || asciiArtPosition.x >= window.innerWidth - asciiArt.offsetWidth - safeZone) {
-                asciiArtDirection.x *= -1;
-            }
-            if (asciiArtPosition.y <= safeZone || asciiArtPosition.y >= window.innerHeight - asciiArt.offsetHeight - safeZone) {
-                asciiArtDirection.y *= -1;
-            }
-
-            asciiArt.style.left = `${asciiArtPosition.x}px`;
-            asciiArt.style.top = `${asciiArtPosition.y}px`;
-
-            starArtPosition.x += starArtSpeed * starArtDirection.x;
-            starArtPosition.y += starArtSpeed * starArtDirection.y;
-
-            const starArtWidth = starArt.offsetWidth;
-            const starArtHeight = starArt.offsetHeight;
-            const viewportWidth = window.innerWidth;
-            const viewportHeight = window.innerHeight;
-
-            if (starArtPosition.x <= safeZone || starArtPosition.x >= viewportWidth - starArtWidth - safeZone) {
-                starArtDirection.x *= -1;
-            }
-            if (starArtPosition.y <= safeZone || starArtPosition.y >= viewportHeight - starArtHeight - safeZone) {
-                starArtDirection.y *= -1;
-            }
-
-            starArt.style.left = `${Math.min(Math.max(starArtPosition.x, 0), viewportWidth - starArtWidth)}px`;
-            starArt.style.top = `${Math.min(Math.max(starArtPosition.y, 0), viewportHeight - starArtHeight)}px`;
-
-            requestAnimationFrame(moveElements);
-        }
-
-        // Load front page content from fp.html
-        fetch('fp.html')
-            .then(response => {
-                if (!response.ok) throw new Error('Failed to load fp.html');
-                return response.text();
-            })
-            .then(data => {
-                const tempDiv = document.createElement('div');
-                tempDiv.innerHTML = data;
-                const content = tempDiv.querySelector('body') || tempDiv;
-                document.getElementById('front-page-content').appendChild(content);
-                setTimeout(() => {
-                    document.querySelectorAll('.ascii-art, .star-art').forEach(el => {
-                        el.classList.add('fade-in');
-                    });
-                }, 1000);
-            })
-            .catch(error => console.error('Error loading front page content:', error));
-
-        moveElements();
     </script>
 </body>
 </html>
