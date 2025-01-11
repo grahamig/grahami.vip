@@ -4,5 +4,5 @@ dev notes
 cd /d E:\grahami.vip
 git status
 git add .
-git commit -m "title fix & gradient go crazy mode"
+git commit -m "landing page complete"
 git push origin main
