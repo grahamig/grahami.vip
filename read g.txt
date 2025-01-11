@@ -4,5 +4,5 @@ dev notes
 cd /d E:\grahami.vip
 git status
 git add .
-git commit -m "landing page complete"
+git commit -m "landing page updates"
 git push origin main
