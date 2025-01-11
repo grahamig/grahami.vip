@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>☆ vip ☆</title>
+    <title>☆☆☆vip☆☆☆</title>
     <link rel="icon" href="vipgrahami.ico" type="image/x-icon">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
@@ -105,7 +105,8 @@
             }
         }
 
-        .ascii-art, .star-art {
+        /* Specific selector for ASCII art */
+        .index-ascii-art, .index-star-art {
             font-size: 14px;
             white-space: pre;
             position: absolute;
@@ -122,7 +123,7 @@
             opacity: 0;
         }
 
-        h1 {
+        h1.index-heading {
             font-size: 44px;
             color: white;
             text-shadow: 6px 6px 6px #000000, 6px 6px 0px #000000;
@@ -130,7 +131,7 @@
             z-index: 10;
         }
 
-        footer {
+        footer.index-footer {
             font-size: 22px;
             text-shadow: 3px 3px 3px #000000, 3px 3px 0px #000000;
             position: absolute;
@@ -140,14 +141,14 @@
             z-index: 1000;
         }
 
-            footer a {
+            footer.index-footer a {
                 color: white;
                 text-decoration: none;
                 font-size: 24px;
                 text-shadow: 3px 3px 3px #000000, 3px 3px 0px #000000;
             }
 
-                footer a:hover {
+                footer.index-footer a:hover {
                     text-shadow: 0px 0px 15px #ff00b3;
                 }
     </style>
@@ -212,7 +213,7 @@
 
                 // Start fade-in effect for ASCII art
                 setTimeout(() => {
-                    document.querySelectorAll('.ascii-art, .star-art').forEach(el => {
+                    document.querySelectorAll('.index-ascii-art, .index-star-art').forEach(el => {
                         el.classList.add('fade-in');
                     });
                 }, 1000); // Delay to allow for smoother animation
