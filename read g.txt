@@ -4,5 +4,5 @@ dev notes
 cd /d E:\grahami.vip
 git status
 git add .
-git commit -m "get trippy"
+git commit -m "are y'all ready for that bounce?"
 git push origin main
