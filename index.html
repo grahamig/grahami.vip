@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>☆☆vip☆☆</title>
-    <!--favicon-->
+    <title>☆ vip ☆</title>
     <link rel="icon" href="vipgrahami.ico" type="image/x-icon">
-
-    <!--google fonts-->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
     </style>
@@ -31,7 +28,7 @@
 
         #login-container {
             position: absolute;
-            bottom: 30px; /* Adjusted to move closer to the footer */
+            bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
         }
@@ -83,7 +80,7 @@
             width: 100%;
             height: 100%;
             overflow-y: auto;
-            pointer-events: none; /* Prevent interfering with login */
+            pointer-events: none;
         }
 
         @keyframes gradient {
@@ -108,27 +105,54 @@
             }
         }
 
-        /* Fade In/Out for ASCII Art */
         .ascii-art, .star-art {
             font-size: 14px;
             white-space: pre;
             position: absolute;
-            opacity: 1;
+            opacity: 0;
             z-index: 9;
             transition: opacity 1.5s ease-in-out;
+        }
+
+        .fade-in {
+            opacity: 1;
         }
 
         .fade-out {
             opacity: 0;
         }
 
-        .fade-in {
-            opacity: 1;
+        h1 {
+            font-size: 44px;
+            color: white;
+            text-shadow: 6px 6px 6px #000000, 6px 6px 0px #000000;
+            position: absolute;
+            z-index: 10;
         }
+
+        footer {
+            font-size: 22px;
+            text-shadow: 3px 3px 3px #000000, 3px 3px 0px #000000;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
+
+            footer a {
+                color: white;
+                text-decoration: none;
+                font-size: 24px;
+                text-shadow: 3px 3px 3px #000000, 3px 3px 0px #000000;
+            }
+
+                footer a:hover {
+                    text-shadow: 0px 0px 15px #ff00b3;
+                }
     </style>
 </head>
 <body>
-    <!-- Front Page Content -->
     <div id="front-page-content"></div>
 
     <!-- Login -->
@@ -175,10 +199,8 @@
                 scripts.forEach(script => {
                     const newScript = document.createElement('script');
                     if (script.src) {
-                        // If the script has a src attribute, copy it
                         newScript.src = script.src;
                     } else {
-                        // Otherwise, copy the inline script content
                         newScript.textContent = script.textContent;
                     }
                     document.body.appendChild(newScript);
@@ -187,6 +209,13 @@
                 // Inject the rest of the content into the page
                 const content = tempDiv.querySelector('body') || tempDiv;
                 document.getElementById('front-page-content').appendChild(content);
+
+                // Start fade-in effect for ASCII art
+                setTimeout(() => {
+                    document.querySelectorAll('.ascii-art, .star-art').forEach(el => {
+                        el.classList.add('fade-in');
+                    });
+                }, 1000); // Delay to allow for smoother animation
             })
             .catch(error => console.error('Error loading front page content:', error));
     </script>
