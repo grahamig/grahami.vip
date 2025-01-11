@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONLY☆VIPS</title>
+    <title>ONLY ☆ VIPS</title>
     <!--favicon-->
     <link rel="icon" href="vipgrahami.ico" type="image/x-icon">
 
@@ -52,8 +52,6 @@
             transition: opacity 3s ease-in-out;
             top: 20%; /* Adjusted for better placement */
             left: 20%; /* Adjusted for better placement */
-            right: 10%;
-            bottom: 10%;
         }
 
         /* Media Query for smaller screens (mobile, tablet) */
@@ -62,8 +60,6 @@
                 font-size: 16px; /* Adjust size for smaller screens */
                 top: 5%; /* Adjust top position for better placement */
                 left: 5%; /* Adjust left position for better placement */
-                right: 5%;
-                bottom: 5%;
             }
         }
 
@@ -190,7 +186,7 @@
 ⠀⠀⠀⠀⢠⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⢸⣿⣿⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀
 ⠀⠀⠀⣠⣾⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠿⠿⠿⣿⣿⣶⣦⠄⠀
-        </pre>
+</pre>
 
         <pre class="star-art">
 ⠀⠀⠀⢸⣦⡀⠀⠀⠀⠀⢀⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -207,7 +203,7 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠉⠁⠀⠀⠀⠀⠙⢿⣿⣿⠇⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀
-⠀       </pre>
+</pre>
 
         <footer>
             <a href="https://www.instagram.com/grahamiiig" target="_blank" style="color: white; text-decoration: none;">
@@ -279,12 +275,12 @@
             starArtPosition.x += starArtSpeed * starArtDirection.x;
             starArtPosition.y += starArtSpeed * starArtDirection.y;
 
-            // Ensure the star art stays within the screen bounds
             const starArtWidth = starArt.offsetWidth;
             const starArtHeight = starArt.offsetHeight;
             const viewportWidth = window.innerWidth;
             const viewportHeight = window.innerHeight;
 
+            // Ensure star art bounces within the viewport
             if (starArtPosition.x <= safeZone || starArtPosition.x >= viewportWidth - starArtWidth - safeZone) {
                 starArtDirection.x *= -1;
             }
@@ -307,8 +303,24 @@
             }, randomTime);
         }
 
+        // Start random fading for ASCII and star art
         randomFade(asciiArt);
         randomFade(starArt);
+
+        // Login toggle logic
+        const loginButton = document.getElementById('login-button');
+        const loginForm = document.getElementById('login-form');
+        const closeButton = document.getElementById('close-button');
+
+        loginButton.addEventListener('click', () => {
+            loginForm.style.display = loginForm.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        closeButton.addEventListener('click', () => {
+            loginForm.style.display = 'none';
+        });
+
+        // Start the DVD screensaver animation
         moveElements();
     </script>
 </body>
