@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONLY☆VIPS</title>
+    <title>☆ONLY☆VIPS☆</title>
 
     <!--google fonts-->
     <style>
@@ -35,7 +35,15 @@
         }
 
         .ascii-art {
-            font-size: 10px; 
+            font-size: 9px;
+            white-space: pre;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 3s ease-in-out;
+        }
+
+        .star-art {
+            font-size: 9px;
             white-space: pre;
             position: absolute;
             opacity: 0;
@@ -53,7 +61,7 @@
         }
 
         .star {
-            font-size: 32px; 
+            font-size: 32px;
         }
 
         @keyframes gradient {
@@ -92,19 +100,35 @@
                           __--/     (D)  \             $  \\\\  $
                           _ -/    (_      \       .--.___/    \___.--.
                          // /       \_ / ==\      |  |   \    /   |  ;
-   __-------_____--___--/           / \_ O o)     |  ||~| |  | |~||  | /----\
-  /                                 /   \==\\     |  ;|_| |  | |_|:  |/ ._;` |
- /                                 /        \\    \  ;____|  |____:   ./   | |
-||          )                   \_/\         \\    \.. ||||[]||||__\./    [| |
-||         /              _      /  |         \    // [|   ||        \    [| |
-| |      /--______      ___\    /\  :          \  //  [:   ||.____.   |\   | |
-| /   __-  - _/   ------    |  |   \ \           \/   /|   |      |   ;\   | |
- |   -  -   /                | |     \ )              /|   |      \___/\   | |
- |  |   -  |                 | )     | |              /|   |       | :     | |
-  | |    | |                 | |    | |               /|   |       : --^-[[| |
-  | |    < |                 | |   |_/                 \___/      |__---^[[| |
-  < |    /__\                <  \                      .| |                | |
-  /__\                       /___\                    (__))                |_|
+   __-------_____--___--/           / \_ O o)     |  ||~| |  | |~||  |  /---\
+  /                                 /   \==\\     |  ;|_| |  | |_|:  |/ ._;`|
+ /                                 /        \\    \  ;____|  |____:   ./   |  |
+||          )                   \_/\         \\    \.. ||||[]||||__\./    [|  |
+||         /              _      /  |         \    // [|   ||        \    [|  |
+| |      /--______      ___\    /\  :          \  //  [:   ||.____.   |\   |  |
+| /   __-  - _/   ------    |  |   \ \           \/   /|   |      |   ;\   |  |
+ |   -  -   /                | |     \ )              /|   |      \___/\   |  |
+ |  |   -  |                 | )     | |              /|   |       | :     |  |
+  | |    | |                 | |    | |               /|   |       : --^[[ |  |
+  | |    < |                 | |   |_/                 \___/      |__---^[[|  |
+  < |    /__\                <  \                      .| |                |  |
+  /__\                       /___\                    (__))                |  |
+        </pre>
+        <pre class="star-art">
+⠀⠀⠀⢸⣦⡀⠀⠀⠀⠀⢀⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢸⣏⠻⣶⣤⡶⢾⡿⠁⠀⢠⣄⡀⢀⣴⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⣀⣼⠷⠀⠀⠁⢀⣿⠃⠀⠀⢀⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠴⣾⣯⣅⣀⠀⠀⠀⠈⢻⣦⡀⠒⠻⠿⣿⡿⠿⠓⠂⠀⠀⢀⡇⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠉⢻⡇⣤⣾⣿⣷⣿⣿⣤⠀⠀⣿⠁⠀⠀⠀⢀⣴⣿⣿⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠸⣿⡿⠏⠀⢀⠀⠀⠿⣶⣤⣤⣤⣄⣀⣴⣿⡿⢻⣿⡆⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠟⠁⠀⢀⣼⠀⠀⠀⠹⣿⣟⠿⠿⠿⡿⠋⠀⠘⣿⣇⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢳⣶⣶⣿⣿⣇⣀⠀⠀⠙⣿⣆⠀⠀⠀⠀⠀⠀⠛⠿⣿⣦⣤⣀⠀⠀
+⠀⠀⠀⠀⠀⠀⣹⣿⣿⣿⣿⠿⠋⠁⠀⣹⣿⠳⠀⠀⠀⠀⠀⠀⢀⣠⣽⣿⡿⠟⠃
+⠀⠀⠀⠀⠀⢰⠿⠛⠻⢿⡇⠀⠀⠀⣰⣿⠏⠀⠀⢀⠀⠀⠀⣾⣿⠟⠋⠁⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠀⠀⣰⣿⣿⣾⣿⠿⢿⣷⣀⢀⣿⡇⠁⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠉⠁⠀⠀⠀⠀⠙⢿⣿⣿⠇⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀
         </pre>
         <footer>you're a <span class="star">☆</span>!</footer>
     </div>
@@ -113,12 +137,16 @@
         // DVD screensaver animation
         let h1 = document.querySelector('h1');
         let asciiArt = document.querySelector('.ascii-art');
+        let starArt = document.querySelector('.star-art');
         let h1Speed = 0.5; // Constant speed for movement
         let asciiArtSpeed = 0.5; // Speed for ASCII art movement
+        let starArtSpeed = 0.5; // Speed for star ASCII art movement
         let h1Direction = { x: 1, y: 1 }; // Directions of movement for h1
         let asciiArtDirection = { x: -1, y: 1 }; // Directions of movement for ASCII art
+        let starArtDirection = { x: 1, y: -1 }; // Directions of movement for star ASCII art
         let h1Position = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
         let asciiArtPosition = { x: window.innerWidth / 3, y: window.innerHeight / 3 };
+        let starArtPosition = { x: window.innerWidth / 4, y: window.innerHeight / 4 };
         let safeZone = 18; // Safe zone to prevent the text from going off-screen
 
         function moveElements() {
@@ -150,11 +178,27 @@
                 asciiArtPosition.y = Math.max(safeZone, Math.min(window.innerHeight - asciiArt.offsetHeight - safeZone, asciiArtPosition.y));
             }
 
+            // Update star ASCII art position
+            starArtPosition.x += starArtSpeed * starArtDirection.x;
+            starArtPosition.y += starArtSpeed * starArtDirection.y;
+
+            // Bounce off edges for star ASCII art
+            if (starArtPosition.x <= safeZone || starArtPosition.x >= window.innerWidth - starArt.offsetWidth - safeZone) {
+                starArtDirection.x *= -1;
+                starArtPosition.x = Math.max(safeZone, Math.min(window.innerWidth - starArt.offsetWidth - safeZone, starArtPosition.x));
+            }
+            if (starArtPosition.y <= safeZone || starArtPosition.y >= window.innerHeight - starArt.offsetHeight - safeZone) {
+                starArtDirection.y *= -1;
+                starArtPosition.y = Math.max(safeZone, Math.min(window.innerHeight - starArt.offsetHeight - safeZone, starArtPosition.y));
+            }
+
             // Apply new positions
             h1.style.left = `${h1Position.x}px`;
             h1.style.top = `${h1Position.y}px`;
             asciiArt.style.left = `${asciiArtPosition.x}px`;
             asciiArt.style.top = `${asciiArtPosition.y}px`;
+            starArt.style.left = `${starArtPosition.x}px`;
+            starArt.style.top = `${starArtPosition.y}px`;
 
             requestAnimationFrame(moveElements);
         }
@@ -162,6 +206,7 @@
         function fadeInOut() {
             setInterval(() => {
                 asciiArt.style.opacity = asciiArt.style.opacity == 0 ? 1 : 0;
+                starArt.style.opacity = starArt.style.opacity == 0 ? 1 : 0;
             }, 5000); // Change opacity every 5 seconds
         }
 
