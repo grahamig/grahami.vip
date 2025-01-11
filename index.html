@@ -29,60 +29,6 @@
             position: relative;
         }
 
-        h1 {
-            font-size: 44px;
-            color: white;
-            text-shadow: 6px 6px 6px #000000, 6px 6px 0px #000000;
-            position: absolute;
-        }
-
-        .ascii-art {
-            font-size: 9px;
-            white-space: pre;
-            position: absolute;
-            opacity: 0;
-            transition: opacity 4s ease-in-out;
-        }
-
-        .star-art {
-            font-size: 19px;
-            white-space: pre;
-            position: absolute;
-            opacity: 0;
-            transition: opacity 3s ease-in-out;
-            top: 20%; /* Adjusted for better placement */
-            left: 20%; /* Adjusted for better placement */
-        }
-
-        /* Media Query for smaller screens (mobile, tablet) */
-        @media (max-width: 768px) {
-            .star-art {
-                font-size: 16px; /* Adjust size for smaller screens */
-                top: 5%; /* Adjust top position for better placement */
-                left: 5%; /* Adjust left position for better placement */
-            }
-        }
-
-        footer {
-            font-size: 22px;
-            text-shadow: 3px 3px 3px #000000, 3px 3px 0px #000000;
-            position: absolute;
-            cursor: pointer;
-            color: white;
-            text-decoration: none;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1000;
-        }
-
-        .star {
-            font-size: 32px;
-            cursor: pointer;
-            color: white;
-            text-decoration: none;
-        }
-
         #login-container {
             position: absolute;
             bottom: 30px; /* Adjusted to move closer to the footer */
@@ -156,61 +102,6 @@
 </head>
 <body>
     <div>
-        <h1>howdy<br />folks!</h1>
-        <!--ascii arts-->
-        <pre class="ascii-art">
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣾⣿⡦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⠀⠀⣰⣿⣿⣿⣿⣷⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠈⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠆⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⣿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣤⡀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀
-⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠀
-⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠉⠻⣿⣿⣿⣿⡆
-⠀⢀⣾⣿⣿⣿⠟⠁⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠸⣿⣿⣿⣷
-⠀⢸⣿⣿⣿⡏⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⣿⣿⣿⣿
-⠀⣿⣿⣿⣿⠀⢀⣄⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⢠⡄⠀⠀⢹⣿⣿⡟
-⠀⣿⣿⣿⠏⠀⢸⣇⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⢸⣷⡠⠶⣿⣿⣿⠋
-⠰⣿⣿⣿⠀⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⢸⣿⡿⠀
-⢠⣿⣿⠿⣧⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⢠⣿⠟⠁⠀
-⣿⣿⠃⠀⠈⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠂⠀⠁⠀⠀⠀
-⠘⠟⠃⠀⠀⠀⠀⢹⣿⣿⣿⣿⣿⣿⡟⠉⢿⣿⣿⣿⣿⣿⣿⠉⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿⡟⠀⠀⠈⢿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⡿⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⠁⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⠁⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⣸⣿⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⢀⣿⣿⣿⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⢠⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⢸⣿⣿⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀
-⠀⠀⠀⣠⣾⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠿⠿⠿⣿⣿⣶⣦⠄⠀
-</pre>
-
-        <pre class="star-art">
-⠀⠀⠀⢸⣦⡀⠀⠀⠀⠀⢀⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⢸⣏⠻⣶⣤⡶⢾⡿⠁⠀⢠⣄⡀⢀⣴⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⣀⣼⠷⠀⠀⠁⢀⣿⠃⠀⠀⢀⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠴⣾⣯⣅⣀⠀⠀⠀⠈⢻⣦⡀⠒⠻⠿⣿⡿⠿⠓⠂⠀⠀⢀⡇⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠉⢻⡇⣤⣾⣿⣷⣿⣿⣤⠀⠀⣿⠁⠀⠀⠀⢀⣴⣿⣿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠸⣿⡿⠏⠀⢀⠀⠀⠿⣶⣤⣤⣤⣄⣀⣴⣿⡿⢻⣿⡆⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠟⠁⠀⢀⣼⠀⠀⠀⠹⣿⣟⠿⠿⠿⡿⠋⠀⠘⣿⣇⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⢳⣶⣶⣿⣿⣇⣀⠀⠀⠙⣿⣆⠀⠀⠀⠀⠀⠀⠛⠿⣿⣦⣤⣀⠀⠀
-⠀⠀⠀⠀⠀⠀⣹⣿⣿⣿⣿⠿⠋⠁⠀⣹⣿⠳⠀⠀⠀⠀⠀⠀⢀⣠⣽⣿⡿⠟⠃
-⠀⠀⠀⠀⠀⢰⠿⠛⠻⢿⡇⠀⠀⠀⣰⣿⠏⠀⠀⢀⠀⠀⠀⣾⣿⠟⠋⠁⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠀⠀⣰⣿⣿⣾⣿⠿⢿⣷⣀⢀⣿⡇⠁⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠉⠁⠀⠀⠀⠀⠙⢿⣿⣿⠇⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀
-</pre>
-
-        <footer>
-            <a href="https://www.instagram.com/grahamiiig" target="_blank" style="color: white; text-decoration: none;">
-                you're a <span class="star">☆</span>!
-            </a>
-        </footer>
-
         <!-- Login -->
         <div id="login-container">
             <button id="login-button">Login</button>
@@ -223,91 +114,6 @@
     </div>
 
     <script>
-        // DVD screensaver animation
-        let h1 = document.querySelector('h1');
-        let asciiArt = document.querySelector('.ascii-art');
-        let starArt = document.querySelector('.star-art');
-
-        let h1Speed = 0.6;
-        let asciiArtSpeed = 0.3;
-        let starArtSpeed = 1;
-
-        let h1Direction = { x: 1, y: 1 };
-        let asciiArtDirection = { x: -1, y: 1 };
-        let starArtDirection = { x: 1, y: -1 };
-
-        let h1Position = { x: 100, y: 100 };
-        let asciiArtPosition = { x: 200, y: 200 };
-        let starArtPosition = { x: 300, y: 300 };
-
-        const safeZone = 18;
-
-        function moveElements() {
-            // Move h1
-            h1Position.x += h1Speed * h1Direction.x;
-            h1Position.y += h1Speed * h1Direction.y;
-
-            if (h1Position.x <= safeZone || h1Position.x >= window.innerWidth - h1.offsetWidth - safeZone) {
-                h1Direction.x *= -1;
-            }
-            if (h1Position.y <= safeZone || h1Position.y >= window.innerHeight - h1.offsetHeight - safeZone) {
-                h1Direction.y *= -1;
-            }
-
-            h1.style.left = `${h1Position.x}px`;
-            h1.style.top = `${h1Position.y}px`;
-
-            // Move ASCII art
-            asciiArtPosition.x += asciiArtSpeed * asciiArtDirection.x;
-            asciiArtPosition.y += asciiArtSpeed * asciiArtDirection.y;
-
-            if (asciiArtPosition.x <= safeZone || asciiArtPosition.x >= window.innerWidth - asciiArt.offsetWidth - safeZone) {
-                asciiArtDirection.x *= -1;
-            }
-            if (asciiArtPosition.y <= safeZone || asciiArtPosition.y >= window.innerHeight - asciiArt.offsetHeight - safeZone) {
-                asciiArtDirection.y *= -1;
-            }
-
-            asciiArt.style.left = `${asciiArtPosition.x}px`;
-            asciiArt.style.top = `${asciiArtPosition.y}px`;
-
-            // Move star art and bounce correctly within screen bounds
-            starArtPosition.x += starArtSpeed * starArtDirection.x;
-            starArtPosition.y += starArtSpeed * starArtDirection.y;
-
-            const starArtWidth = starArt.offsetWidth;
-            const starArtHeight = starArt.offsetHeight;
-            const viewportWidth = window.innerWidth;
-            const viewportHeight = window.innerHeight;
-
-            // Ensure star art bounces within the viewport
-            if (starArtPosition.x <= safeZone || starArtPosition.x >= viewportWidth - starArtWidth - safeZone) {
-                starArtDirection.x *= -1;
-            }
-            if (starArtPosition.y <= safeZone || starArtPosition.y >= viewportHeight - starArtHeight - safeZone) {
-                starArtDirection.y *= -1;
-            }
-
-            // Set the position of the star art, clamping it properly within the screen bounds
-            starArt.style.left = `${Math.min(Math.max(starArtPosition.x, 0), viewportWidth - starArtWidth)}px`;
-            starArt.style.top = `${Math.min(Math.max(starArtPosition.y, 0), viewportHeight - starArtHeight)}px`;
-
-            requestAnimationFrame(moveElements);
-        }
-
-        // Random fade-in and fade-out
-        function randomFade(element) {
-            const randomTime = Math.random() * 10000 + 5000; // Random between 5s and 15s
-            setTimeout(() => {
-                element.style.opacity = element.style.opacity == 1 ? 0 : 1;
-                randomFade(element); // Recursive call
-            }, randomTime);
-        }
-
-        // Start random fading for ASCII and star art
-        randomFade(asciiArt);
-        randomFade(starArt);
-
         // Login toggle logic
         const loginButton = document.getElementById('login-button');
         const loginForm = document.getElementById('login-form');
@@ -320,10 +126,6 @@
         closeButton.addEventListener('click', () => {
             loginForm.style.display = 'none';
         });
-
-        // Start the DVD screensaver animation
-        moveElements();
     </script>
-
 </body>
 </html>

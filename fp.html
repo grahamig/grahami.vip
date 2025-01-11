@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONLY☆VIPS</title>
+    <!--favicon-->
+    <link rel="icon" href="vipgrahami.ico" type="image/x-icon">
+
+    <!--google fonts-->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
+    </style>
+
+    <style>
+        body {
+            font-family: "Slackey", cursive, sans-serif;
+            background: linear-gradient(69deg, #00ffcc, #00e5ff, #ff00b3, #9b00ff, #00ff99, #00ffcc, #cc00ff, #00bfff);
+            background-size: 444% 444%;
+            animation: gradient 99s ease infinite;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 44px;
+            color: white;
+            text-shadow: 6px 6px 6px #000000, 6px 6px 0px #000000;
+            position: absolute;
+        }
+
+        .ascii-art {
+            font-size: 9px;
+            white-space: pre;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 4s ease-in-out;
+        }
+
+        .star-art {
+            font-size: 19px;
+            white-space: pre;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 3s ease-in-out;
+            top: 20%;
+            left: 20%;
+        }
+
+        footer {
+            font-size: 22px;
+            text-shadow: 3px 3px 3px #000000, 3px 3px 0px #000000;
+            position: absolute;
+            cursor: pointer;
+            color: white;
+            text-decoration: none;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+        }
+
+        .star {
+            font-size: 32px;
+            cursor: pointer;
+            color: white;
+            text-decoration: none;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            25% {
+                background-position: 25% 50%;
+            }
+
+            50% {
+                background-position: 50% 50%;
+            }
+
+            75% {
+                background-position: 75% 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>howdy<br />folks!</h1>
+
+        <!--ascii arts-->
+        <pre class="ascii-art">
+            <!-- Your ASCII art goes here -->
+        </pre>
+
+        <pre class="star-art">
+            <!-- Your star art goes here -->
+        </pre>
+
+        <footer>
+            <a href="https://www.instagram.com/grahamiiig" target="_blank" style="color: white; text-decoration: none;">
+                you're a <span class="star">☆</span>!
+            </a>
+        </footer>
+    </div>
+
+    <script>
+        // DVD screensaver animation
+        let h1 = document.querySelector('h1');
+        let asciiArt = document.querySelector('.ascii-art');
+        let starArt = document.querySelector('.star-art');
+
+        let h1Speed = 0.6;
+        let asciiArtSpeed = 0.3;
+        let starArtSpeed = 1;
+
+        let h1Direction = { x: 1, y: 1 };
+        let asciiArtDirection = { x: -1, y: 1 };
+        let starArtDirection = { x: 1, y: -1 };
+
+        let h1Position = { x: 100, y: 100 };
+        let asciiArtPosition = { x: 200, y: 200 };
+        let starArtPosition = { x: 300, y: 300 };
+
+        const safeZone = 18;
+
+        function moveElements() {
+            // Move h1
+            h1Position.x += h1Speed * h1Direction.x;
+            h1Position.y += h1Speed * h1Direction.y;
+
+            if (h1Position.x <= safeZone || h1Position.x >= window.innerWidth - h1.offsetWidth - safeZone) {
+                h1Direction.x *= -1;
+            }
+            if (h1Position.y <= safeZone || h1Position.y >= window.innerHeight - h1.offsetHeight - safeZone) {
+                h1Direction.y *= -1;
+            }
+
+            h1.style.left = `${h1Position.x}px`;
+            h1.style.top = `${h1Position.y}px`;
+
+            // Move ASCII art
+            asciiArtPosition.x += asciiArtSpeed * asciiArtDirection.x;
+            asciiArtPosition.y += asciiArtSpeed * asciiArtDirection.y;
+
+            if (asciiArtPosition.x <= safeZone || asciiArtPosition.x >= window.innerWidth - asciiArt.offsetWidth - safeZone) {
+                asciiArtDirection.x *= -1;
+            }
+            if (asciiArtPosition.y <= safeZone || asciiArtPosition.y >= window.innerHeight - asciiArt.offsetHeight - safeZone) {
+                asciiArtDirection.y *= -1;
+            }
+
+            asciiArt.style.left = `${asciiArtPosition.x}px`;
+            asciiArt.style.top = `${asciiArtPosition.y}px`;
+
+            // Move star art
+            starArtPosition.x += starArtSpeed * starArtDirection.x;
+            starArtPosition.y += starArtSpeed * starArtDirection.y;
+
+            if (starArtPosition.x <= safeZone || starArtPosition.x >= window.innerWidth - starArt.offsetWidth - safeZone) {
+                starArtDirection.x *= -1;
+            }
+            if (starArtPosition.y <= safeZone || starArtPosition.y >= window.innerHeight - starArt.offsetHeight - safeZone) {
+                starArtDirection.y *= -1;
+            }
+
+            starArt.style.left = `${starArtPosition.x}px`;
+            starArt.style.top = `${starArtPosition.y}px`;
+
+            requestAnimationFrame(moveElements);
+        }
+
+        // Load animations
+        window.onload = () => {
+            setTimeout(() => {
+                asciiArt.style.opacity = 1;
+            }, 1000);
+
+            setTimeout(() => {
+                starArt.style.opacity = 1;
+            }, 2000);
+
+            moveElements();
+        };
+    </script>
+</body>
+</html>
