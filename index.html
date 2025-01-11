@@ -34,18 +34,12 @@
             color: white;
             text-shadow: 6px 6px 6px #000000, 6px 6px 0px #000000;
             position: absolute;
-            top: 10%;
-            left: 50%;
-            transform: translateX(-50%);
         }
 
         .ascii-art {
             font-size: 9px;
             white-space: pre;
             position: absolute;
-            top: 20%;
-            left: 50%;
-            transform: translateX(-50%);
             opacity: 0;
             transition: opacity 4s ease-in-out;
         }
@@ -54,9 +48,6 @@
             font-size: 19px;
             white-space: pre;
             position: absolute;
-            top: 30%;
-            left: 50%;
-            transform: translateX(-50%);
             opacity: 0;
             transition: opacity 3s ease-in-out;
         }
@@ -83,10 +74,9 @@
 
         #login-container {
             position: absolute;
-            top: calc(50% + 80px); /* Adjusted value to move it lower */
+            bottom: 40px; /* Adjusted to move closer to the footer */
             left: 50%;
-            transform: translate(-50%, -50%);
-            transition: all 0.5s ease;
+            transform: translateX(-50%);
         }
 
         #login-button {
@@ -156,51 +146,8 @@
 <body>
     <div>
         <h1>howdy<br />folks!</h1>
-        <pre class="ascii-art">
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣾⣿⡦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⠀⠀⣰⣿⣿⣿⣿⣷⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠈⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠆⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⣿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣤⡀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀
-⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠀
-⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠉⠻⣿⣿⣿⣿⡆
-⠀⢀⣾⣿⣿⣿⠟⠁⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠸⣿⣿⣿⣷
-⠀⢸⣿⣿⣿⡏⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⣿⣿⣿⣿
-⠀⣿⣿⣿⣿⠀⢀⣄⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⢠⡄⠀⠀⢹⣿⣿⡟
-⠀⣿⣿⣿⠏⠀⢸⣇⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⢸⣷⡠⠶⣿⣿⣿⠋
-⠰⣿⣿⣿⠀⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⢸⣿⡿⠀
-⢠⣿⣿⠿⣧⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⢠⣿⠟⠁⠀
-⣿⣿⠃⠀⠈⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠂⠀⠁⠀⠀⠀
-⠘⠟⠃⠀⠀⠀⠀⢹⣿⣿⣿⣿⣿⣿⡟⠉⢿⣿⣿⣿⣿⣿⣿⠉⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿⡟⠀⠀⠈⢿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⡿⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⠁⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⠁⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⣸⣿⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⢀⣿⣿⣿⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⢠⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⢸⣿⣿⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀
-⠀⠀⠀⣠⣾⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠿⠿⠿⣿⣿⣶⣦⠄⠀
-        </pre>
-        <pre class="star-art">
-⠀⠀⠀⢸⣦⡀⠀⠀⠀⠀⢀⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⢸⣏⠻⣶⣤⡶⢾⡿⠁⠀⢠⣄⡀⢀⣴⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⣀⣼⠷⠀⠀⠁⢀⣿⠃⠀⠀⢀⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠴⣾⣯⣅⣀⠀⠀⠀⠈⢻⣦⡀⠒⠻⠿⣿⡿⠿⠓⠂⠀⠀⢀⡇⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠉⢻⡇⣤⣾⣿⣷⣿⣿⣤⠀⠀⣿⠁⠀⠀⠀⢀⣴⣿⣿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠸⣿⡿⠏⠀⢀⠀⠀⠿⣶⣤⣤⣤⣄⣀⣴⣿⡿⢻⣿⡆⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠟⠁⠀⢀⣼⠀⠀⠀⠹⣿⣟⠿⠿⠿⡿⠋⠀⠘⣿⣇⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⢳⣶⣶⣿⣿⣇⣀⠀⠀⠙⣿⣆⠀⠀⠀⠀⠀⠀⠛⠿⣿⣦⣤⣀⠀⠀
-⠀⠀⠀⠀⠀⠀⣹⣿⣿⣿⣿⠿⠋⠁⠀⣹⣿⠳⠀⠀⠀⠀⠀⠀⢀⣠⣽⣿⡿⠟⠃
-⠀⠀⠀⠀⠀⢰⠿⠛⠻⢿⡇⠀⠀⠀⣰⣿⠏⠀⠀⢀⠀⠀⠀⣾⣿⠟⠋⠁⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠀⠀⣰⣿⣿⣾⣿⠿⢿⣷⣀⢀⣿⡇⠁⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠉⠁⠀⠀⠀⠀⠙⢿⣿⣿⠇⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀
-        </pre>
+        <pre class="ascii-art">ASCII Art Goes Here</pre>
+        <pre class="star-art">☆ Stars Here</pre>
         <footer>
             <a href="https://www.instagram.com/grahamiiig" target="_blank" style="color: white; text-decoration: none;">
                 you're a <span class="star">☆</span>!
@@ -219,26 +166,35 @@
     </div>
 
     <script>
+        // DVD screensaver animation
+        let h1 = document.querySelector('h1');
+        let asciiArt = document.querySelector('.ascii-art');
+        let starArt = document.querySelector('.star-art');
+
+        // Random fade-in and fade-out
+        function randomFade(element) {
+            const randomTime = Math.random() * 10000 + 5000; // Random between 5s and 15s
+            setTimeout(() => {
+                element.style.opacity = element.style.opacity == 1 ? 0 : 1;
+                randomFade(element); // Recursive call
+            }, randomTime);
+        }
+
+        // Start random fading for ASCII and star art
+        randomFade(asciiArt);
+        randomFade(starArt);
+
+        // Login toggle logic
         const loginButton = document.getElementById('login-button');
         const loginForm = document.getElementById('login-form');
         const closeButton = document.getElementById('close-button');
-        const loginContainer = document.getElementById('login-container');
 
         loginButton.addEventListener('click', () => {
-            loginButton.style.display = 'none';
-            loginForm.style.display = 'flex';
+            loginForm.style.display = loginForm.style.display === 'flex' ? 'none' : 'flex';
         });
 
         closeButton.addEventListener('click', () => {
             loginForm.style.display = 'none';
-            loginButton.style.display = 'block';
-        });
-
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') {
-                loginForm.style.display = 'none';
-                loginButton.style.display = 'block';
-            }
         });
     </script>
 </body>
