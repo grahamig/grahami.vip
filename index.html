@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>☆OSOV☆</title>
+    <title>☆☆OS☆OV☆☆</title>
 
     <!--favicon-->
     <link rel="icon" href="vipgrahami.ico" type="image/x-icon">
@@ -18,7 +18,7 @@
             font-family: "Slackey", cursive, sans-serif;
             background: linear-gradient(-44deg, #00ffcc, #00e5ff, #ff00b3, #9b00ff, #00ff99, #00ffcc, #cc00ff, #00bfff);
             background-size: 444% 444%;
-            animation: gradient 101s ease infinite;
+            animation: gradient 69s ease infinite;
             color: white;
             display: flex;
             justify-content: center;
@@ -73,82 +73,104 @@
             text-decoration: none; /* Remove underline */
         }
 
+        
+        /* Login form styling */
         #login-form {
             display: none;
             flex-direction: column;
             align-items: center;
             position: absolute;
-            top: 50%;
+            top: 60%; /* Adjust the form's vertical position */
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 20;
         }
 
-            #login-form input {
-                margin: 5px;
-                padding: 10px;
-                font-size: 16px;
+        #login-form input {
+            margin: 10px; /* Add more spacing for better readability */
+            padding: 12px;
+            font-size: 16px;
+            width: 80%; /* Keep input width consistent */
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+
+        #login-form button {
+            padding: 12px 30px; /* Larger button for easier interaction */
+            font-size: 18px;
+            background-color: #ff00b3;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 15px; /* Adds space between the fields and button */
+            border-radius: 8px;
+            width: 80%; /* Match button width to input fields */
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        }
+
+            #login-form button:hover {
+                background: linear-gradient(135deg, #00ffcc, #ff00b3); /* Reverse gradient on hover */
+                transform: translateY(-5px); /* Lift effect */
+                box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow */
             }
 
-            #login-form button {
-                padding: 10px;
-                font-size: 16px;
-                background-color: #ff00b3;
-                color: white;
-                border: none;
-                cursor: pointer;
+            #login-form button:focus {
+                outline: none; /* Remove default outline */
+                box-shadow: 0px 0px 0px 3px rgba(255, 0, 179, 0.6); /* Custom focus outline */
             }
 
+        /* Login button styling */
         #login-button {
             position: absolute;
-            top: 70%; /* Adjust as needed */
+            top: 70%; /* Adjust the button's position lower */
             left: 50%;
             transform: translateX(-50%);
-            padding: 15px 30px; /* Make the button larger */
+            padding: 15px 30px;
             font-size: 18px;
             font-weight: bold;
             color: white;
-            background: linear-gradient(135deg, #ff00b3, #00ffcc); /* Vibrant gradient */
+            background: linear-gradient(135deg, #ff00b3, #00ffcc); /* Gradient */
             border: 2px solid #ff00b3;
-            border-radius: 8px; /* Rounded corners */
+            border-radius: 8px;
             text-transform: uppercase;
             cursor: pointer;
-            transition: all 0.3s ease; /* Smooth transition for hover effects */
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+            transition: all 0.3s ease;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
         }
 
             #login-button:hover {
-                background: linear-gradient(135deg, #00ffcc, #ff00b3); /* Reverse gradient on hover */
+                background: linear-gradient(135deg, #00ffcc, #ff00b3); /* Reverse gradient */
                 transform: translateX(-50%) translateY(-5px); /* Lift effect */
-                box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+                box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow */
             }
 
             #login-button:focus {
-                outline: none; /* Remove the default focus outline */
-                box-shadow: 0px 0px 0px 3px rgba(255, 0, 179, 0.6); /* Add custom focus outline */
+                outline: none;
+                box-shadow: 0px 0px 0px 3px rgba(255, 0, 179, 0.6); /* Focus effect */
             }
 
-        @keyframes gradient {
-            0% {
-                background-position: 0% 50%;
-            }
 
-            25% {
-                background-position: 25% 50%;
-            }
+    @keyframes gradient {
+    0% {
+    background-position: 0% 50%;
+    }
 
-            50% {
-                background-position: 50% 50%;
-            }
+    25% {
+    background-position: 25% 50%;
+    }
 
-            75% {
-                background-position: 75% 50%;
-            }
+    50% {
+    background-position: 50% 50%;
+    }
 
-            100% {
-                background-position: 100% 50%;
-            }
-        }
+    75% {
+    background-position: 75% 50%;
+    }
+
+    100% {
+    background-position: 100% 50%;
+    }
+    }
     </style>
 </head>
 <body>
@@ -207,8 +229,8 @@
         <div id="login-form">
             <input type="text" id="uname" placeholder="U NAME" />
             <input type="password" id="pword" placeholder="P WORD" />
-            <button type="submit">Submit</button>
-            <button type="button" id="close-button">Close</button>
+            <button type="submit">GO</button>
+            <button type="button" id="close-button">X</button>
         </div>
     </div>
 
