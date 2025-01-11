@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONLY☆VIPS</title>
+    <title>ONLY ☆ VIPS</title>
 
     <!--google fonts-->
     <style>
@@ -47,13 +47,16 @@
             white-space: pre;
             position: absolute;
             opacity: 0;
-            transition: opacity 5s ease-in-out;
+            transition: opacity 4s ease-in-out;
         }
 
         footer {
             font-size: 22px;
             text-shadow: 3px 3px 3px #000000, 3px 3px 0px #000000;
             position: absolute;
+            cursor: pointer; /* Add cursor to indicate it's clickable */
+            color: white; /* Make the link white */
+            text-decoration: none; /* Remove underline */
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -62,6 +65,9 @@
 
         .star {
             font-size: 32px;
+            cursor: pointer; /* Add cursor to indicate it's clickable */
+            color: white; /* Make the link white */
+            text-decoration: none; /* Remove underline */
         }
 
         @keyframes gradient {
@@ -133,9 +139,9 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠀⠀⣰⣿⣿⣾⣿⠿⢿⣷⣀⢀⣿⡇⠁⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠉⠁⠀⠀⠀⠀⠙⢿⣿⣿⠇⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀
         </pre>
-        <footer>you're a <span class="star">☆</span></footer>
+        <footer>you're a <a href="https://www.instagram.com/grahamiiig" target="_blank" class="star">☆</a>!</footer>
     </div>
 
     <script>
@@ -211,10 +217,10 @@
         function fadeInOut() {
             setInterval(() => {
                 asciiArt.style.opacity = asciiArt.style.opacity == 0 ? 1 : 0;
-            }, 8000); // Change opacity every 5 seconds
+            }, 30000); // Change opacity
             setInterval(() => {
                 starArt.style.opacity = starArt.style.opacity == 0 ? 1 : 0;
-            }, 10000); // Change opacity every 7 seconds
+            }, 10000); // Change opacity
         }
 
         // Start the movement and fading
