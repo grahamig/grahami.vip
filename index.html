@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>☆ Only☆VIPs ☆</title>
+    <title>☆ OnlyVIPs ☆</title>
 
     <!--favicon-->
     <link rel="icon" href="vipgrahami.ico" type="image/x-icon">
@@ -46,8 +46,8 @@
             top: 20%;
             left: 50%;
             transform: translateX(-50%);
-            opacity: 1; /* Ensure the ASCII art is visible */
-            transition: opacity 4s ease-in-out;
+            opacity: 0; /* Start with hidden ASCII art */
+            animation: fadeInOut 4s ease-in-out infinite; /* Fade in and out */
         }
 
         .star-art {
@@ -57,8 +57,8 @@
             top: 30%;
             left: 50%;
             transform: translateX(-50%);
-            opacity: 1;
-            transition: opacity 4s ease-in-out;
+            opacity: 0; /* Start with hidden star art */
+            animation: fadeInOut 4s ease-in-out infinite; /* Fade in and out */
         }
 
         footer {
@@ -117,6 +117,7 @@
                 border-radius: 8px;
                 width: 210px;
                 box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+                z-index: 20; /* Ensure the form buttons are above other elements */
             }
 
                 #login-form button:hover {
@@ -153,6 +154,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 10; /* Ensure the button is above other elements */
         }
 
             #login-button:hover {
@@ -205,6 +207,21 @@
                 background-position: 100% 50%;
             }
         }
+
+        /* Animation for fading in and out */
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -253,7 +270,7 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠀⠀⣰⣿⣿⣾⣿⠿⢿⣷⣀⢀⣿⡇⠁⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠉⠁⠀⠀⠀⠀⠙⢿⣿⣿⠇⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀
 </pre>
         <footer><a href="https://www.instagram.com/grahamiiig" target="_blank" id="instagram-link">☆</a></footer>
 
@@ -291,72 +308,49 @@
             h1Position.y += h1Speed * h1Direction.y;
 
             // Bounce off edges for h1
-            if (h1Position.x <= safeZone || h1Position.x >= window.innerWidth - h1.offsetWidth - safeZone) {
+            if (h1Position.x < safeZone || h1Position.x > window.innerWidth - safeZone) {
                 h1Direction.x *= -1;
-                h1Position.x = Math.max(safeZone, Math.min(window.innerWidth - h1.offsetWidth - safeZone, h1Position.x));
             }
-            if (h1Position.y <= safeZone || h1Position.y >= window.innerHeight - h1.offsetHeight - safeZone) {
+            if (h1Position.y < safeZone || h1Position.y > window.innerHeight - safeZone) {
                 h1Direction.y *= -1;
-                h1Position.y = Math.max(safeZone, Math.min(window.innerHeight - h1.offsetHeight - safeZone, h1Position.y));
             }
 
-            // Update ASCII art position
+            // Update positions of ASCII art elements
             asciiArtPosition.x += asciiArtSpeed * asciiArtDirection.x;
             asciiArtPosition.y += asciiArtSpeed * asciiArtDirection.y;
 
-            // Bounce off edges for ASCII art
-            if (asciiArtPosition.x <= safeZone || asciiArtPosition.x >= window.innerWidth - asciiArt.offsetWidth - safeZone) {
-                asciiArtDirection.x *= -1;
-                asciiArtPosition.x = Math.max(safeZone, Math.min(window.innerWidth - asciiArt.offsetWidth - safeZone, asciiArtPosition.x));
-            }
-            if (asciiArtPosition.y <= safeZone || asciiArtPosition.y >= window.innerHeight - asciiArt.offsetHeight - safeZone) {
-                asciiArtDirection.y *= -1;
-                asciiArtPosition.y = Math.max(safeZone, Math.min(window.innerHeight - asciiArt.offsetHeight - safeZone, asciiArtPosition.y));
-            }
-
-            // Update star art position
             starArtPosition.x += starArtSpeed * starArtDirection.x;
             starArtPosition.y += starArtSpeed * starArtDirection.y;
 
-            // Bounce off edges for star art
-            if (starArtPosition.x <= safeZone || starArtPosition.x >= window.innerWidth - starArt.offsetWidth - safeZone) {
+            // Bounce off edges for ASCII art elements
+            if (asciiArtPosition.x < safeZone || asciiArtPosition.x > window.innerWidth - safeZone) {
+                asciiArtDirection.x *= -1;
+            }
+            if (asciiArtPosition.y < safeZone || asciiArtPosition.y > window.innerHeight - safeZone) {
+                asciiArtDirection.y *= -1;
+            }
+
+            if (starArtPosition.x < safeZone || starArtPosition.x > window.innerWidth - safeZone) {
                 starArtDirection.x *= -1;
-                starArtPosition.x = Math.max(safeZone, Math.min(window.innerWidth - starArt.offsetWidth - safeZone, starArtPosition.x));
             }
-            if (starArtPosition.y <= safeZone || starArtPosition.y >= window.innerHeight - starArt.offsetHeight - safeZone) {
+            if (starArtPosition.y < safeZone || starArtPosition.y > window.innerHeight - safeZone) {
                 starArtDirection.y *= -1;
-                starArtPosition.y = Math.max(safeZone, Math.min(window.innerHeight - starArt.offsetHeight - safeZone, starArtPosition.y));
             }
 
-            // Set new positions
-            h1.style.left = h1Position.x + 'px';
-            h1.style.top = h1Position.y + 'px';
-            asciiArt.style.left = asciiArtPosition.x + 'px';
-            asciiArt.style.top = asciiArtPosition.y + 'px';
-            starArt.style.left = starArtPosition.x + 'px';
-            starArt.style.top = starArtPosition.y + 'px';
+            // Apply new positions to elements
+            h1.style.left = `${h1Position.x}px`;
+            h1.style.top = `${h1Position.y}px`;
+
+            asciiArt.style.left = `${asciiArtPosition.x}px`;
+            asciiArt.style.top = `${asciiArtPosition.y}px`;
+
+            starArt.style.left = `${starArtPosition.x}px`;
+            starArt.style.top = `${starArtPosition.y}px`;
+
+            requestAnimationFrame(moveElements);
         }
 
-        // Animation loop
-        function loop() {
-            moveElements();
-            requestAnimationFrame(loop);
-        }
-
-        loop(); // Start the animation
-
-        // Login toggle logic
-        const loginButton = document.getElementById('login-button');
-        const loginForm = document.getElementById('login-form');
-        const closeButton = document.getElementById('close-button');
-
-        loginButton.addEventListener('click', () => {
-            loginForm.style.display = 'flex'; // Show login form when button is clicked
-        });
-
-        closeButton.addEventListener('click', () => {
-            loginForm.style.display = 'none'; // Hide login form when X is clicked
-        });
+        moveElements();
     </script>
 </body>
 </html>
