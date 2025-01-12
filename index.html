@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>☆ OnlyVIPs ☆</title>
+    <title>☆Only☆VIPs☆</title>
 
     <!--favicon-->
     <link rel="icon" href="vipgrahami.ico" type="image/x-icon">
@@ -20,11 +20,11 @@
             background-size: 444% 444%;
             animation: gradient 136s ease infinite;
             color: white;
-            margin: 0;
-            overflow: hidden; /* Prevent scrolling */
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh;
+            margin: 0;
             text-align: center;
             position: relative;
         }
@@ -43,23 +43,22 @@
             font-size: 9px;
             white-space: pre;
             position: absolute;
-            top: 25%;
+            top: 20%;
             left: 50%;
             transform: translateX(-50%);
-            opacity: 0;
-            animation: fadeInOut 4s ease-in-out infinite;
+            opacity: 1; /* Ensure the ASCII art is visible */
+            transition: opacity 4s ease-in-out;
         }
 
         .star-art {
             font-size: 19px;
             white-space: pre;
             position: absolute;
-            top: 35%;
+            top: 30%;
             left: 50%;
             transform: translateX(-50%);
-            opacity: 0;
-            animation: fadeInOut 4s ease-in-out infinite;
-            animation-delay: 3s;
+            opacity: 1;
+            transition: opacity 4s ease-in-out;
         }
 
         footer {
@@ -69,7 +68,7 @@
             cursor: pointer;
             color: white;
             text-decoration: none;
-            top: 90%;
+            top: 5%;
             left: 50%;
             transform: translateX(-50%);
             z-index: 10;
@@ -88,11 +87,11 @@
         }
 
         #login-form {
-            display: none;
+            display: none; /* Initially hidden */
             flex-direction: column;
             align-items: center;
-            position: absolute;
-            top: 40%;
+            position: relative;
+            top: 40%; /* Adjust to move down */
             left: 50%;
             transform: translateX(-50%);
             z-index: 20;
@@ -118,7 +117,6 @@
                 border-radius: 8px;
                 width: 210px;
                 box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-                z-index: 20;
             }
 
                 #login-form button:hover {
@@ -141,7 +139,7 @@
 
         #login-button {
             position: absolute;
-            top: 65%;
+            top: 60%;
             left: 50%;
             transform: translateX(-50%);
             padding: 12px 24px;
@@ -155,7 +153,6 @@
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-            z-index: 10;
         }
 
             #login-button:hover {
@@ -208,20 +205,6 @@
                 background-position: 100% 50%;
             }
         }
-
-        @keyframes fadeInOut {
-            0% {
-                opacity: 0;
-            }
-
-            50% {
-                opacity: 1;
-            }
-
-            100% {
-                opacity: 0;
-            }
-        }
     </style>
 </head>
 <body>
@@ -270,8 +253,8 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠀⠀⣰⣿⣿⣾⣿⠿⢿⣷⣀⢀⣿⡇⠁⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠉⠁⠀⠀⠀⠀⠙⢿⣿⣿⠇⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀
-        </pre>
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀
+</pre>
         <footer><a href="https://www.instagram.com/grahamiiig" target="_blank" id="instagram-link">☆</a></footer>
 
         <!-- Login Button -->
@@ -287,33 +270,16 @@
     </div>
 
     <script>
-        // Elements
-        const loginButton = document.getElementById('login-button');
-        const loginForm = document.getElementById('login-form');
-        const closeButton = document.getElementById('close-button');
-
-        // Toggle login form
-        loginButton.onclick = () => {
-            loginForm.style.display = 'flex';
-        }
-
-        // Close login form
-        closeButton.onclick = () => {
-            loginForm.style.display = 'none';
-        }
-
         // DVD screensaver animation
         let h1 = document.querySelector('h1');
         let asciiArt = document.querySelector('.ascii-art');
         let starArt = document.querySelector('.star-art');
         let h1Speed = 0.5; // Constant speed for movement
         let asciiArtSpeed = 0.5; // Speed for ASCII art movement
-        let starArtSpeed = 0.5; // Speed for star art movement
-
-        let h1Direction = { x: 1, y: 1 }; // Movement direction for h1
-        let asciiArtDirection = { x: 1, y: 1 }; // Direction for ASCII art
-        let starArtDirection = { x: 1, y: 1 }; // Direction for star art
-
+        let starArtSpeed = 0.5; // Speed for star ASCII art movement
+        let h1Direction = { x: 1, y: 1 }; // Directions of movement for h1
+        let asciiArtDirection = { x: -1, y: 1 }; // Directions of movement for ASCII art
+        let starArtDirection = { x: 1, y: -1 }; // Directions of movement for star ASCII art
         let h1Position = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
         let asciiArtPosition = { x: window.innerWidth / 3, y: window.innerHeight / 3 };
         let starArtPosition = { x: window.innerWidth / 4, y: window.innerHeight / 4 };
@@ -325,49 +291,72 @@
             h1Position.y += h1Speed * h1Direction.y;
 
             // Bounce off edges for h1
-            if (h1Position.x < safeZone || h1Position.x > window.innerWidth - safeZone) {
+            if (h1Position.x <= safeZone || h1Position.x >= window.innerWidth - h1.offsetWidth - safeZone) {
                 h1Direction.x *= -1;
+                h1Position.x = Math.max(safeZone, Math.min(window.innerWidth - h1.offsetWidth - safeZone, h1Position.x));
             }
-            if (h1Position.y < safeZone || h1Position.y > window.innerHeight - safeZone) {
+            if (h1Position.y <= safeZone || h1Position.y >= window.innerHeight - h1.offsetHeight - safeZone) {
                 h1Direction.y *= -1;
+                h1Position.y = Math.max(safeZone, Math.min(window.innerHeight - h1.offsetHeight - safeZone, h1Position.y));
             }
 
-            // Update positions of ASCII art elements
+            // Update ASCII art position
             asciiArtPosition.x += asciiArtSpeed * asciiArtDirection.x;
             asciiArtPosition.y += asciiArtSpeed * asciiArtDirection.y;
 
+            // Bounce off edges for ASCII art
+            if (asciiArtPosition.x <= safeZone || asciiArtPosition.x >= window.innerWidth - asciiArt.offsetWidth - safeZone) {
+                asciiArtDirection.x *= -1;
+                asciiArtPosition.x = Math.max(safeZone, Math.min(window.innerWidth - asciiArt.offsetWidth - safeZone, asciiArtPosition.x));
+            }
+            if (asciiArtPosition.y <= safeZone || asciiArtPosition.y >= window.innerHeight - asciiArt.offsetHeight - safeZone) {
+                asciiArtDirection.y *= -1;
+                asciiArtPosition.y = Math.max(safeZone, Math.min(window.innerHeight - asciiArt.offsetHeight - safeZone, asciiArtPosition.y));
+            }
+
+            // Update star art position
             starArtPosition.x += starArtSpeed * starArtDirection.x;
             starArtPosition.y += starArtSpeed * starArtDirection.y;
 
-            // Bounce off edges for ASCII art elements
-            if (asciiArtPosition.x < safeZone || asciiArtPosition.x > window.innerWidth - safeZone) {
-                asciiArtDirection.x *= -1;
-            }
-            if (asciiArtPosition.y < safeZone || asciiArtPosition.y > window.innerHeight - safeZone) {
-                asciiArtDirection.y *= -1;
-            }
-
-            if (starArtPosition.x < safeZone || starArtPosition.x > window.innerWidth - safeZone) {
+            // Bounce off edges for star art
+            if (starArtPosition.x <= safeZone || starArtPosition.x >= window.innerWidth - starArt.offsetWidth - safeZone) {
                 starArtDirection.x *= -1;
+                starArtPosition.x = Math.max(safeZone, Math.min(window.innerWidth - starArt.offsetWidth - safeZone, starArtPosition.x));
             }
-            if (starArtPosition.y < safeZone || starArtPosition.y > window.innerHeight - safeZone) {
+            if (starArtPosition.y <= safeZone || starArtPosition.y >= window.innerHeight - starArt.offsetHeight - safeZone) {
                 starArtDirection.y *= -1;
+                starArtPosition.y = Math.max(safeZone, Math.min(window.innerHeight - starArt.offsetHeight - safeZone, starArtPosition.y));
             }
 
-            // Apply new positions to elements
-            h1.style.left = `${h1Position.x}px`;
-            h1.style.top = `${h1Position.y}px`;
-
-            asciiArt.style.left = `${asciiArtPosition.x}px`;
-            asciiArt.style.top = `${asciiArtPosition.y}px`;
-
-            starArt.style.left = `${starArtPosition.x}px`;
-            starArt.style.top = `${starArtPosition.y}px`;
-
-            requestAnimationFrame(moveElements);
+            // Set new positions
+            h1.style.left = h1Position.x + 'px';
+            h1.style.top = h1Position.y + 'px';
+            asciiArt.style.left = asciiArtPosition.x + 'px';
+            asciiArt.style.top = asciiArtPosition.y + 'px';
+            starArt.style.left = starArtPosition.x + 'px';
+            starArt.style.top = starArtPosition.y + 'px';
         }
 
-        moveElements();
+        // Animation loop
+        function loop() {
+            moveElements();
+            requestAnimationFrame(loop);
+        }
+
+        loop(); // Start the animation
+
+        // Login toggle logic
+        const loginButton = document.getElementById('login-button');
+        const loginForm = document.getElementById('login-form');
+        const closeButton = document.getElementById('close-button');
+
+        loginButton.addEventListener('click', () => {
+            loginForm.style.display = 'flex'; // Show login form when button is clicked
+        });
+
+        closeButton.addEventListener('click', () => {
+            loginForm.style.display = 'none'; // Hide login form when X is clicked
+        });
     </script>
 </body>
 </html>
