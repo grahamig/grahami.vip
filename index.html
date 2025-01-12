@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>☆ OnlyVIPs ☆</title>
+    <title>☆OnlyVIPs☆</title>
 
     <!--favicon-->
     <link rel="icon" href="vipgrahami.ico" type="image/x-icon">
@@ -46,8 +46,8 @@
             top: 20%;
             left: 50%;
             transform: translateX(-50%);
-            opacity: 0; /* Start with hidden ASCII art */
-            animation: fadeInOut 4s ease-in-out infinite; /* Fade in and out */
+            opacity: 0;
+            animation: fadeInOut 4s ease-in-out infinite;
         }
 
         .star-art {
@@ -57,8 +57,9 @@
             top: 30%;
             left: 50%;
             transform: translateX(-50%);
-            opacity: 0; /* Start with hidden star art */
-            animation: fadeInOut 4s ease-in-out infinite; /* Fade in and out */
+            opacity: 0;
+            animation: fadeInOut 4s ease-in-out infinite;
+            animation-delay: 3s;
         }
 
         footer {
@@ -87,11 +88,11 @@
         }
 
         #login-form {
-            display: none; /* Initially hidden */
+            display: none;
             flex-direction: column;
             align-items: center;
             position: relative;
-            top: 40%; /* Adjust to move down */
+            top: 40%;
             left: 50%;
             transform: translateX(-50%);
             z-index: 20;
@@ -117,7 +118,7 @@
                 border-radius: 8px;
                 width: 210px;
                 box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-                z-index: 20; /* Ensure the form buttons are above other elements */
+                z-index: 20;
             }
 
                 #login-form button:hover {
@@ -154,7 +155,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-            z-index: 10; /* Ensure the button is above other elements */
+            z-index: 10;
         }
 
             #login-button:hover {
@@ -208,7 +209,6 @@
             }
         }
 
-        /* Animation for fading in and out */
         @keyframes fadeInOut {
             0% {
                 opacity: 0;
@@ -271,7 +271,7 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠉⠁⠀⠀⠀⠀⠙⢿⣿⣿⠇⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀
-</pre>
+        </pre>
         <footer><a href="https://www.instagram.com/grahamiiig" target="_blank" id="instagram-link">☆</a></footer>
 
         <!-- Login Button -->
@@ -287,6 +287,21 @@
     </div>
 
     <script>
+        // Elements
+        const loginButton = document.getElementById('login-button');
+        const loginForm = document.getElementById('login-form');
+        const closeButton = document.getElementById('close-button');
+
+        // Toggle login form
+        loginButton.onclick = () => {
+            loginForm.style.display = 'flex';
+        }
+
+        // Close login form
+        closeButton.onclick = () => {
+            loginForm.style.display = 'none';
+        }
+
         // DVD screensaver animation
         let h1 = document.querySelector('h1');
         let asciiArt = document.querySelector('.ascii-art');
