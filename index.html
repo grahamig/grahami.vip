@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>☆OnlyVIPs☆</title>
+    <title>☆ OnlyVIPs ☆</title>
 
     <!--favicon-->
     <link rel="icon" href="vipgrahami.ico" type="image/x-icon">
@@ -34,7 +34,7 @@
             color: white;
             text-shadow: 6px 6px 6px #000000, 6px 6px 0px #000000;
             position: absolute;
-            top: 10%; /* Adjust to your preference */
+            top: 10%;
             left: 50%;
             transform: translateX(-50%);
         }
@@ -62,54 +62,54 @@
             cursor: pointer;
             color: white;
             text-decoration: none;
-            top: 5%; /* Move it upwards */
+            top: 5%;
             left: 50%;
             transform: translateX(-50%);
             z-index: 10;
         }
 
         #instagram-link {
-            font-size: 36px; /* Match size with "Howdy folks" */
-            color: white; /* No weird color */
-            text-decoration: none; /* No underline */
-            text-shadow: 3px 3px 3px #000000, 3px 3px 0px #000000; /* Matching shadow */
+            font-size: 36px;
+            color: white;
+            text-decoration: none;
+            text-shadow: 3px 3px 3px #000000, 3px 3px 0px #000000;
             position: absolute;
-            top: 5%; /* Position at the top */
+            top: 5%;
             left: 50%;
             transform: translateX(-50%);
-            z-index: 20; /* Ensure it’s above other content */
+            z-index: 20;
         }
 
         #login-form {
-            display: flex;
+            display: none; /* Initially hidden */
             flex-direction: column;
             align-items: center;
             position: relative;
-            top: 25%; /* Move form down to prevent overlap */
+            top: 40%; /* Adjust to move down */
             left: 50%;
             transform: translateX(-50%);
             z-index: 20;
         }
 
             #login-form input {
-                margin: 5px; /* Reduced margin for compactness */
+                margin: 5px;
                 padding: 8px;
-                font-size: 14px; /* Smaller input fields */
-                width: 200px; /* Reduced width */
+                font-size: 14px;
+                width: 200px;
                 border: 2px solid #ccc;
                 border-radius: 8px;
             }
 
             #login-form button {
                 padding: 10px 20px;
-                font-size: 14px; /* Smaller button */
+                font-size: 14px;
                 background-color: #ff00b3;
                 color: white;
                 border: none;
                 cursor: pointer;
-                margin-top: 10px; /* Reduced space between fields */
+                margin-top: 10px;
                 border-radius: 8px;
-                width: 210px; /* Match width with input */
+                width: 210px;
                 box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
             }
 
@@ -126,7 +126,7 @@
 
         #login-button {
             position: absolute;
-            top: 60%; /* Moved down */
+            top: 60%;
             left: 50%;
             transform: translateX(-50%);
             padding: 12px 24px;
@@ -155,7 +155,7 @@
 
         .close {
             position: absolute;
-            top: 20px; /* Moved down */
+            top: 20px;
             right: 20px;
             font-size: 24px;
             cursor: pointer;
@@ -163,7 +163,7 @@
 
         button {
             position: absolute;
-            top: 70px; /* Moved down */
+            top: 70px;
             left: 50%;
             transform: translateX(-50%);
             padding: 10px 20px;
@@ -192,7 +192,6 @@
                 background-position: 100% 50%;
             }
         }
-
     </style>
 </head>
 <body>
@@ -241,8 +240,9 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠀⠀⣰⣿⣿⣾⣿⠿⢿⣷⣀⢀⣿⡇⠁⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠉⠁⠀⠀⠀⠀⠙⢿⣿⣿⠇⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀</pre>
-        <footer><a href="https://www.instagram.com/grahamiiig" target="_blank" class="star">☆</a></footer>
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀
+</pre>
+        <footer><a href="https://www.instagram.com/grahamiiig" target="_blank" id="instagram-link">☆</a></footer>
 
         <!-- Login Button -->
         <button id="login-button">Login</button>
@@ -301,11 +301,11 @@
                 asciiArtPosition.y = Math.max(safeZone, Math.min(window.innerHeight - asciiArt.offsetHeight - safeZone, asciiArtPosition.y));
             }
 
-            // Update star ASCII art position
+            // Update star art position
             starArtPosition.x += starArtSpeed * starArtDirection.x;
             starArtPosition.y += starArtSpeed * starArtDirection.y;
 
-            // Bounce off edges for star ASCII art
+            // Bounce off edges for star art
             if (starArtPosition.x <= safeZone || starArtPosition.x >= window.innerWidth - starArt.offsetWidth - safeZone) {
                 starArtDirection.x *= -1;
                 starArtPosition.x = Math.max(safeZone, Math.min(window.innerWidth - starArt.offsetWidth - safeZone, starArtPosition.x));
@@ -315,29 +315,22 @@
                 starArtPosition.y = Math.max(safeZone, Math.min(window.innerHeight - starArt.offsetHeight - safeZone, starArtPosition.y));
             }
 
-            // Apply new positions
-            h1.style.left = `${h1Position.x}px`;
-            h1.style.top = `${h1Position.y}px`;
-            asciiArt.style.left = `${asciiArtPosition.x}px`;
-            asciiArt.style.top = `${asciiArtPosition.y}px`;
-            starArt.style.left = `${starArtPosition.x}px`;
-            starArt.style.top = `${starArtPosition.y}px`;
-
-            requestAnimationFrame(moveElements);
+            // Set new positions
+            h1.style.left = h1Position.x + 'px';
+            h1.style.top = h1Position.y + 'px';
+            asciiArt.style.left = asciiArtPosition.x + 'px';
+            asciiArt.style.top = asciiArtPosition.y + 'px';
+            starArt.style.left = starArtPosition.x + 'px';
+            starArt.style.top = starArtPosition.y + 'px';
         }
 
-        function fadeInOut() {
-            setInterval(() => {
-                asciiArt.style.opacity = asciiArt.style.opacity == 0 ? 1 : 0;
-            }, 30000); // Change opacity
-            setInterval(() => {
-                starArt.style.opacity = starArt.style.opacity == 0 ? 1 : 0;
-            }, 10000); // Change opacity
+        // Animation loop
+        function loop() {
+            moveElements();
+            requestAnimationFrame(loop);
         }
 
-        // Start the movement and fading
-        moveElements();
-        fadeInOut();
+        loop(); // Start the animation
 
         // Login toggle logic
         const loginButton = document.getElementById('login-button');
@@ -345,11 +338,11 @@
         const closeButton = document.getElementById('close-button');
 
         loginButton.addEventListener('click', () => {
-            loginForm.style.display = loginForm.style.display === 'flex' ? 'none' : 'flex';
+            loginForm.style.display = 'flex'; // Show login form when button is clicked
         });
 
         closeButton.addEventListener('click', () => {
-            loginForm.style.display = 'none';
+            loginForm.style.display = 'none'; // Hide login form when X is clicked
         });
     </script>
 </body>
