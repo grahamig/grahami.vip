@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>☆ OnlyVIPs ☆</title>
+    <title>☆ Only☆VIPs ☆</title>
 
     <!--favicon-->
     <link rel="icon" href="vipgrahami.ico" type="image/x-icon">
@@ -43,7 +43,10 @@
             font-size: 9px;
             white-space: pre;
             position: absolute;
-            opacity: 0;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 1; /* Ensure the ASCII art is visible */
             transition: opacity 4s ease-in-out;
         }
 
@@ -51,7 +54,10 @@
             font-size: 19px;
             white-space: pre;
             position: absolute;
-            opacity: 0;
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 1;
             transition: opacity 4s ease-in-out;
         }
 
@@ -122,6 +128,13 @@
                 #login-form button:focus {
                     outline: none;
                     box-shadow: 0px 0px 0px 3px rgba(255, 0, 179, 0.6);
+                }
+
+                #login-form button#close-button {
+                    margin-top: 5px;
+                    width: 50px;
+                    padding: 8px;
+                    font-size: 18px;
                 }
 
         #login-button {
