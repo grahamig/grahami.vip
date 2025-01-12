@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>☆ OnlyVIPs ☆</title>
+    <title>☆OnlyVIPs☆</title>
 
     <!--favicon-->
     <link rel="icon" href="vipgrahami.ico" type="image/x-icon">
@@ -69,11 +69,12 @@
         }
 
         #instagram-link {
-            font-size: 20px;
-            text-decoration: none;
-            color: white;
+            font-size: 36px; /* Match size with "Howdy folks" */
+            color: white; /* No weird color */
+            text-decoration: none; /* No underline */
+            text-shadow: 3px 3px 3px #000000, 3px 3px 0px #000000; /* Matching shadow */
             position: absolute;
-            top: 5%;
+            top: 5%; /* Position at the top */
             left: 50%;
             transform: translateX(-50%);
             z-index: 20; /* Ensure it’s above other content */
@@ -84,14 +85,14 @@
             flex-direction: column;
             align-items: center;
             position: relative;
-            top: 20%; /* Move form down a bit */
+            top: 25%; /* Move form down to prevent overlap */
             left: 50%;
             transform: translateX(-50%);
             z-index: 20;
         }
 
             #login-form input {
-                margin: 8px; /* Reduced margin for compactness */
+                margin: 5px; /* Reduced margin for compactness */
                 padding: 8px;
                 font-size: 14px; /* Smaller input fields */
                 width: 200px; /* Reduced width */
@@ -125,7 +126,7 @@
 
         #login-button {
             position: absolute;
-            top: 50%;
+            top: 60%; /* Moved down */
             left: 50%;
             transform: translateX(-50%);
             padding: 12px 24px;
@@ -151,6 +152,24 @@
                 outline: none;
                 box-shadow: 0px 0px 0px 3px rgba(255, 0, 179, 0.6);
             }
+
+        .close {
+            position: absolute;
+            top: 20px; /* Moved down */
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        button {
+            position: absolute;
+            top: 70px; /* Moved down */
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
 
         @keyframes gradient {
             0% {
