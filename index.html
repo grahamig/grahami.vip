@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>☆OnlyVIPs☆</title>
+    <title>☆ OnlyVIPs ☆</title>
 
     <!--favicon-->
     <link rel="icon" href="vipgrahami.ico" type="image/x-icon">
@@ -26,7 +26,6 @@
             height: 100vh;
             margin: 0;
             text-align: center;
-            overflow: hidden;
             position: relative;
         }
 
@@ -35,6 +34,9 @@
             color: white;
             text-shadow: 6px 6px 6px #000000, 6px 6px 0px #000000;
             position: absolute;
+            top: 10%; /* Adjust to your preference */
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .ascii-art {
@@ -57,96 +59,80 @@
             font-size: 36px;
             text-shadow: 3px 3px 3px #000000, 3px 3px 0px #000000;
             position: absolute;
-            cursor: pointer; /* Add cursor to indicate it's clickable */
-            color: white; /* Make the link white */
-            text-decoration: none; /* Remove underline */
-            top: 40%; /* Move it upwards */
+            cursor: pointer;
+            color: white;
+            text-decoration: none;
+            top: 5%; /* Move it upwards */
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translateX(-50%);
             z-index: 10;
         }
 
-        .star {
-            font-size: 72px;
-            cursor: pointer; /* Add cursor to indicate it's clickable */
-            color: white; /* Make the link white */
-            text-decoration: none; /* Remove underline */
-        }
-        /* Login form styling */
-
-        .close {
+        #instagram-link {
+            font-size: 20px;
+            text-decoration: none;
+            color: white;
             position: absolute;
-            top: 15px; /* Adjusted up */
-            right: 20px;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        button {
-            position: absolute;
-            top: 50px; /* Adjusted up */
+            top: 5%;
             left: 50%;
             transform: translateX(-50%);
-            padding: 10px 20px;
-            font-size: 18px;
-            cursor: pointer;
+            z-index: 20; /* Ensure it’s above other content */
         }
-        
+
         #login-form {
-            display: none;
+            display: flex;
             flex-direction: column;
             align-items: center;
-            position: absolute;
-            top: 60%; /* Adjust the form's vertical position */
+            position: relative;
+            top: 20%; /* Move form down a bit */
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translateX(-50%);
             z-index: 20;
         }
 
-        #login-form input {
-            margin: 10px; /* Add more spacing for better readability */
-            padding: 12px;
-            font-size: 16px;
-            width: 80%; /* Keep input width consistent */
-            border: 2px solid #ccc;
-            border-radius: 8px;
-        }
-
-        #login-form button {
-            padding: 12px 30px; /* Larger button for easier interaction */
-            font-size: 18px;
-            background-color: #ff00b3;
-            color: white;
-            border: none;
-            cursor: pointer;
-            margin-top: 15px; /* Adds space between the fields and button */
-            border-radius: 8px;
-            width: 80%; /* Match button width to input fields */
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-        }
-
-            #login-form button:hover {
-                background: linear-gradient(135deg, #00ffcc, #ff00b3); /* Reverse gradient on hover */
-                transform: translateY(-5px); /* Lift effect */
-                box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+            #login-form input {
+                margin: 8px; /* Reduced margin for compactness */
+                padding: 8px;
+                font-size: 14px; /* Smaller input fields */
+                width: 200px; /* Reduced width */
+                border: 2px solid #ccc;
+                border-radius: 8px;
             }
 
-            #login-form button:focus {
-                outline: none; /* Remove default outline */
-                box-shadow: 0px 0px 0px 3px rgba(255, 0, 179, 0.6); /* Custom focus outline */
+            #login-form button {
+                padding: 10px 20px;
+                font-size: 14px; /* Smaller button */
+                background-color: #ff00b3;
+                color: white;
+                border: none;
+                cursor: pointer;
+                margin-top: 10px; /* Reduced space between fields */
+                border-radius: 8px;
+                width: 210px; /* Match width with input */
+                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
             }
 
-        /* Login button styling */
+                #login-form button:hover {
+                    background: linear-gradient(135deg, #00ffcc, #ff00b3);
+                    transform: translateY(-5px);
+                    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+                }
+
+                #login-form button:focus {
+                    outline: none;
+                    box-shadow: 0px 0px 0px 3px rgba(255, 0, 179, 0.6);
+                }
+
         #login-button {
             position: absolute;
-            top: 70%; /* Adjust the button's position lower */
+            top: 50%;
             left: 50%;
             transform: translateX(-50%);
-            padding: 15px 30px;
-            font-size: 18px;
+            padding: 12px 24px;
+            font-size: 14px;
             font-weight: bold;
             color: white;
-            background: linear-gradient(135deg, #ff00b3, #00ffcc); /* Gradient */
+            background: linear-gradient(135deg, #ff00b3, #00ffcc);
             border: 2px solid #ff00b3;
             border-radius: 8px;
             text-transform: uppercase;
@@ -156,38 +142,38 @@
         }
 
             #login-button:hover {
-                background: linear-gradient(135deg, #00ffcc, #ff00b3); /* Reverse gradient */
-                transform: translateX(-50%) translateY(-5px); /* Lift effect */
-                box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+                background: linear-gradient(135deg, #00ffcc, #ff00b3);
+                transform: translateX(-50%) translateY(-5px);
+                box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
             }
 
             #login-button:focus {
                 outline: none;
-                box-shadow: 0px 0px 0px 3px rgba(255, 0, 179, 0.6); /* Focus effect */
+                box-shadow: 0px 0px 0px 3px rgba(255, 0, 179, 0.6);
             }
 
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
 
-    @keyframes gradient {
-    0% {
-    background-position: 0% 50%;
-    }
+            25% {
+                background-position: 25% 50%;
+            }
 
-    25% {
-    background-position: 25% 50%;
-    }
+            50% {
+                background-position: 50% 50%;
+            }
 
-    50% {
-    background-position: 50% 50%;
-    }
+            75% {
+                background-position: 75% 50%;
+            }
 
-    75% {
-    background-position: 75% 50%;
-    }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
 
-    100% {
-    background-position: 100% 50%;
-    }
-    }
     </style>
 </head>
 <body>
